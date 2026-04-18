@@ -3,17 +3,15 @@
   top: 0;
   z-index: 100;
   background: var(--bg-primary);
-  border-bottom: 1px solid transparent;
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
 }
 
-/* .header.scrolled {
+.header.scrolled {
   border-color: var(--border);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 }
- */
 .nav {
   max-width: var(--container);
   margin: 0 auto;
@@ -97,24 +95,6 @@
   margin-left: auto;
 }
 
-.bellBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  color: var(--text-secondary);
-  transition:
-    background 0.15s,
-    color 0.15s;
-}
-.bellBtn:hover {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
 .ctaBtn {
   display: inline-flex;
   align-items: center;
@@ -168,7 +148,7 @@
 .mobileMenu {
   display: none;
   flex-direction: column;
-  gap: 16px;
+
   padding: 18px 20px 20px;
   border-top: 1px solid var(--border);
   background: white;
@@ -176,7 +156,6 @@
 
 .mobileLink {
   display: block;
-  margin: 0;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
@@ -212,6 +191,7 @@
 
 .mobileActions {
   display: flex;
+  margin-top: 12px;
   gap: 12px;
   justify-content: flex-start;
 }
@@ -230,9 +210,6 @@
   }
   .mobileMenu {
     display: flex;
-  }
-  .bellBtn {
-    display: none;
   }
   .ctaBtn {
     display: none;

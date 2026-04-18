@@ -205,21 +205,57 @@
 
 /* ── Responsive ──────────────────────── */
 @media (max-width: 1024px) {
+  .footer {
+    margin: 0;
+  }
+  .container {
+    padding: 36px 24px 24px;
+  }
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 32px;
+  }
+  .brandDesc {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .footer {
-    padding: 40px 20px 28px;
+    margin: 0;
+    padding: 32px 16px 24px;
+  }
+  .container {
+    padding: 28px 20px 20px;
+    border-radius: 0;
   }
   .grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   .brandDesc {
     max-width: 100%;
+  }
+  .socialRow {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .linkList {
+    gap: 8px;
+  }
+  .footerLink,
+  .signupDesc,
+  .copyright {
+    word-break: break-word;
+  }
+  .emailForm {
+    flex-direction: column;
+  }
+  .emailInput {
+    padding: 12px 14px;
+  }
+  .emailSubmit {
+    width: 100%;
+    padding: 12px 16px;
   }
 }

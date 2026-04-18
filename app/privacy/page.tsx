@@ -3,18 +3,13 @@ import React from "react";
 import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 
-import AdBanner from "@/components/ui/AdBanner";
-
-export default function ResourcesPage() {
+export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
-      {/* Top sponsor banner */}
-      <AdBanner placement="top" />
-
       <main id="main-content">
-        <section style={{ padding: "60px 60px" }}>
+        <section style={{ padding: "60px 40px" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <h1
               style={{
@@ -23,7 +18,7 @@ export default function ResourcesPage() {
                 marginBottom: "24px",
               }}
             >
-              Resources
+              Privacy Protocol
             </h1>
             <p
               style={{
@@ -33,13 +28,10 @@ export default function ResourcesPage() {
                 marginBottom: "32px",
               }}
             >
-              Resources content coming soon.
+              Privacy content coming soon.
             </p>
           </div>
         </section>
-
-        {/* Bottom ad */}
-        <AdBanner placement="mid" />
       </main>
 
       <MainFooter />

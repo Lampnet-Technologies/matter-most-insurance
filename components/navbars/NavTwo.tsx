@@ -4,17 +4,17 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import styles from "./MainNav.module.css";
+import styles from "./NavTwo.module.css";
 import { Button } from "@base-ui/react";
 
 const navLinks = [
   { label: "Dashboard", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Resources", href: "/resources" },
-  { label: "Support", href: "/support" },
+  { label: "Join Us", href: "/join-us" },
+  { label: "Contact", href: "/contact" },
+  { label: "Compliance", href: "/compliance" },
 ];
 
-export default function MainNav() {
+export default function NavTwo() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -54,15 +54,8 @@ export default function MainNav() {
 
         {/* Right actions */}
         <div className={styles.actions}>
-          <button
-            className={styles.bellBtn}
-            aria-label="Notifications"
-            title="Notifications"
-          >
-            <BellIcon />
-          </button>
-          <Link href="/secure-plan" className={styles.ctaBtn}>
-            Secure Plan
+          <Link href="/get-a-quote" className={styles.ctaBtn}>
+            Get a Quote
           </Link>
 
           {/* Mobile hamburger */}
@@ -98,35 +91,16 @@ export default function MainNav() {
             })}
           </ul>
           <div className={styles.mobileActions}>
-          <Link
-            href="/secure-plan"
-            className={styles.mobileCta}
-            onClick={() => setMobileOpen(false)}
-          >
-            Secure Plan
-          </Link>
+            <Link
+              href="/get-a-quote"
+              className={styles.mobileCta}
+              onClick={() => setMobileOpen(false)}
+            >
+              Get a Quote
+            </Link>
           </div>
         </div>
       )}
     </header>
-  );
-}
-
-function BellIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-    </svg>
   );
 }

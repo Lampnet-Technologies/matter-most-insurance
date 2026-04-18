@@ -26,10 +26,10 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.ctas}>
-            <Link href="/upgrade" className={styles.btnPrimary}>
+            <Link href="/products" className={styles.btnPrimary}>
               Upgrade Protection
             </Link>
-            <Link href="/roadmap" className={styles.btnOutline}>
+            <Link href="/resources" className={styles.btnOutline}>
               View My Roadmap
             </Link>
           </div>
@@ -53,7 +53,7 @@ export default function HeroSection() {
               keep being the hero for everyone else. We specialize in plans that
               protect your income, your legacy, and your peace of mind.
             </p>
-            <Link href="/our-story" className={styles.missionLink}>
+            <Link href="hero-stories" className={styles.missionLink}>
               Our Full Story →
             </Link>
           </div>

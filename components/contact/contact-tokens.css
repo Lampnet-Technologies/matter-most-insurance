@@ -1,0 +1,36 @@
+/*
+ * contact-tokens.css
+ * Extend globals.css with contact-page design tokens.
+ * Import this in app/contact/layout.tsx OR at the top of the contact page's CSS module.
+ * These map directly to the HTML source's Tailwind color palette.
+ */
+
+:root {
+  /* ── Contact page palette (from source HTML) ────────────────── */
+  --cp-navy: #041627; /* primary text / header bg */
+  --cp-teal: #006a6a; /* secondary / brand accent (links, buttons) */
+  --cp-teal-dark: #004f4f; /* on-secondary-fixed-variant */
+  --cp-teal-container: #90efef; /* secondary-container (chip hover) */
+  --cp-gold: #cca830; /* tertiary-container / totem accent bar */
+  --cp-gold-light: #ffe088; /* tertiary-fixed */
+
+  /* ── Surfaces ───────────────────────────────────────────────── */
+  --cp-surface: #f7fafc; /* page background */
+  --cp-surface-low: #f1f4f6; /* tonal panels, ad slot bg */
+  --cp-surface-card: #ffffff; /* form card, step hover state */
+  --cp-surface-high: #e5e9eb; /* surface-container-high */
+  --cp-navy-container: #1a2b3c; /* primary-container (CTA section bg) */
+
+  /* ── Text ───────────────────────────────────────────────────── */
+  --cp-text-primary: #181c1e; /* on-surface */
+  --cp-text-muted: #44474c; /* on-surface-variant */
+  --cp-text-inverse: #eef1f3; /* inverse-on-surface */
+
+  /* ── Borders ────────────────────────────────────────────────── */
+  --cp-border: #c4c6cd; /* outline-variant */
+  --cp-border-subtle: rgba(196, 198, 205, 0.3);
+
+  /* ── Fonts (matches source HTML) ────────────────────────────── */
+  --cp-font-headline: "Newsreader", serif;
+  --cp-font-body: "Inter", sans-serif;
+}

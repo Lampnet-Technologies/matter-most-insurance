@@ -15,7 +15,7 @@ export default function FinalCTASection() {
         </p>
  
         <div className={styles.ctas}>
-          <Link href="/get-protected" className={styles.btnPrimary}>
+          <Link href="/products" className={styles.btnPrimary}>
             Claim Your Protection
           </Link>
           <Link href="/contact" className={styles.btnOutline}>

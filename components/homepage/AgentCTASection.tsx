@@ -59,7 +59,7 @@ export default function AgentCTASection() {
             })}
           </ul>
 
-          <Link href="/become-an-agent" className={styles.ctaBtn}>
+          <Link href="/join-us" className={styles.ctaBtn}>
             Become an Agent
           </Link>
         </div>

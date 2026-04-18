@@ -14,13 +14,19 @@ const solutionLinks = [
     label: "Equity Indexed Annuity",
     href: "/solutions/equity-indexed-annuity",
   },
-  { label: "Term Life Protection", href: "/solutions/term-life" },
+  { label: "Long Term Care",
+    href: "/solutions/long-term-care" },
+  {
+    label: "Terminal Loss Benefit",
+    href: "/solutions/terminal-loss-benefit",
+  },
 ];
 
 const companyLinks = [
   { label: "Hero Stories", href: "/hero-stories" },
   { label: "Safety Claims", href: "/claims" },
   { label: "Privacy Protocol", href: "/privacy" },
+  { label: "Legal/Compliance", href: "/compliance" },
 ];
 
 export default function MainFooter() {
@@ -72,7 +78,7 @@ export default function MainFooter() {
               ))}
             </ul>
           </div>
- 
+
           {/* ── Col 3: Company ─────────────────────── */}
           <div className={styles.linkCol}>
             <h3 className={styles.colHeading}>Company</h3>
