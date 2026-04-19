@@ -1,0 +1,147 @@
+@import "./join-us-tokens.css";
+
+/* ── Full-bleed hero ────────────────────────────── */
+.section {
+  position: relative;
+  height: 820px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ── Background image layer ─────────────────────── */
+.imageBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Scrim: strong left opacity → fades right */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(4, 22, 39, 0.82) 0%,
+    rgba(4, 22, 39, 0.55) 45%,
+    rgba(4, 22, 39, 0.15) 100%
+  );
+}
+
+/* ── Foreground content ─────────────────────────── */
+.content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  /* left-align within the container */
+  padding-right: 50%;
+}
+
+/* Eyebrow */
+.eyebrow {
+  display: block;
+  font-family: var(--ju-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ju-gold-light);
+  margin-bottom: 20px;
+}
+
+/* Headline */
+.headline {
+  font-family: var(--ju-font-headline);
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+/* Subheadline */
+.subhead {
+  font-family: var(--ju-font-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+/* CTA button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--ju-teal) 0%,
+    var(--ju-teal-dark) 100%
+  );
+  color: #ffffff;
+  font-family: var(--ju-font-body);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 6px;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+}
+.cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.cta svg {
+  transition: transform 0.2s;
+}
+.cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    height: 620px;
+  }
+  .inner {
+    padding-right: 20%;
+    max-width: 100%;
+  }
+  .headline {
+    font-size: clamp(40px, 10vw, 64px);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    height: 560px;
+  }
+  .content {
+    padding: 0 20px;
+  }
+  .inner {
+    padding-right: 0;
+  }
+  .subhead {
+    font-size: 15px;
+  }
+}

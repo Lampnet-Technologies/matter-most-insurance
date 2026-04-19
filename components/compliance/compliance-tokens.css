@@ -1,0 +1,36 @@
+/*
+ * compliance-tokens.css
+ * Design tokens for the Compliance & Legal page.
+ * Imported at the top of every compliance .module.css file.
+ */
+
+:root {
+  /* ── Brand ──────────────────────────────────────── */
+  --co-navy: #041627;
+  --co-teal: #006a6a;
+  --co-teal-dark: #004f4f;
+  --co-gold: #cca830;
+  --co-gold-dim: #e9c349; /* tertiary-fixed-dim */
+  --co-gold-light: #ffe088; /* tertiary-fixed */
+  --co-amber-text: #574500; /* on-tertiary-fixed-variant — italic numbers */
+
+  /* ── Surfaces ───────────────────────────────────── */
+  --co-surface: #f7fafc;
+  --co-surface-low: #f1f4f6;
+  --co-surface-card: #ffffff;
+  --co-surface-high: #e5e9eb;
+  --co-navy-container: #1a2b3c;
+
+  /* ── Text ───────────────────────────────────────── */
+  --co-text-primary: #181c1e;
+  --co-text-muted: #44474c;
+  --co-text-nav: #8192a7; /* on-primary-container */
+
+  /* ── Borders ────────────────────────────────────── */
+  --co-border: #c4c6cd;
+  --co-border-subtle: rgba(196, 198, 205, 0.2);
+
+  /* ── Typography ─────────────────────────────────── */
+  --co-font-headline: "Newsreader", serif;
+  --co-font-body: "Inter", sans-serif;
+}

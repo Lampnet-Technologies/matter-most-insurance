@@ -1,0 +1,173 @@
+@import "./join-us-tokens.css";
+
+.section {
+  padding: 88px 40px;
+  background: var(--ju-surface-low);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left: image column ─────────────────────────── */
+.imageCol {
+  position: relative;
+}
+
+/* Gold ambient orb behind the photo */
+.orb {
+  position: absolute;
+  top: -32px;
+  left: -32px;
+  width: 240px;
+  height: 240px;
+  background: rgba(204, 168, 48, 0.25);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.imageWrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 16px rgba(4, 22, 39, 0.08),
+    0 24px 56px rgba(4, 22, 39, 0.12);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Floating stat badge — bottom-right of image */
+.statBadge {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  z-index: 10;
+  background: var(--ju-navy);
+  color: #ffffff;
+  padding: 20px 24px;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(4, 22, 39, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statValue {
+  font-family: var(--ju-font-headline);
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-family: var(--ju-font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ju-text-nav);
+}
+
+/* ── Right: content column ──────────────────────── */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  font-family: var(--ju-font-headline);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ju-navy);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+/* ── Numbered list ──────────────────────────────── */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Circle number button — teal outline, fills on hover */
+.itemNumber {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ju-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ju-font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ju-teal);
+  transition:
+    background 0.2s,
+    color 0.2s;
+  margin-top: 2px;
+}
+
+.item:hover .itemNumber {
+  background: var(--ju-teal);
+  color: #ffffff;
+}
+
+.itemTitle {
+  font-family: var(--ju-font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ju-navy);
+  margin-bottom: 6px;
+}
+
+.itemBody {
+  font-family: var(--ju-font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ju-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 20px;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .imageWrap {
+    aspect-ratio: 16 / 9;
+  }
+  .statBadge {
+    bottom: 16px;
+    right: 16px;
+  }
+}

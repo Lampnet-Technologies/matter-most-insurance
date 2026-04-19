@@ -1,0 +1,246 @@
+@import "./join-us-tokens.css";
+
+.section {
+  padding: 88px 40px;
+  background: var(--ju-surface);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Section header ─────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 40px;
+}
+
+.headerLeft {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading {
+  font-family: var(--ju-font-headline);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ju-navy);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.subhead {
+  font-family: var(--ju-font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ju-text-muted);
+}
+
+.headerAccent {
+  flex-shrink: 0;
+  width: 120px;
+  height: 4px;
+  background: var(--ju-gold-dim);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+/* ── Bento grid ─────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+/* ── Base card ──────────────────────────────────── */
+.card {
+  border-radius: 10px;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Width variants */
+.cardWide {
+  grid-column: span 8;
+}
+.cardNarrow {
+  grid-column: span 4;
+}
+
+/* Theme variants */
+.cardLight {
+  background: var(--ju-surface-low);
+}
+
+.cardDark {
+  background: var(--ju-navy);
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 320px;
+}
+
+.cardSurface {
+  background: var(--ju-surface-card);
+  border: 1px solid rgba(196, 198, 205, 0.15);
+  box-shadow: 0 1px 4px rgba(4, 22, 39, 0.04);
+}
+
+/* Row layout variant (Marketing Suite) */
+.cardRow {
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ── Card internals ─────────────────────────────── */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cardIcon {
+  color: var(--ju-teal);
+}
+
+.cardTitle {
+  font-family: var(--ju-font-headline);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ju-navy);
+  line-height: 1.15;
+}
+
+.cardTitleTeal {
+  font-style: italic;
+  color: var(--ju-teal);
+  font-size: 22px;
+}
+
+.cardTitleLight {
+  font-family: var(--ju-font-headline);
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 16px 0 12px;
+}
+
+.cardBody {
+  font-family: var(--ju-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ju-text-muted);
+  max-width: 400px;
+}
+
+.cardBodyLight {
+  font-family: var(--ju-font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Shield icon gold tint */
+.shieldIcon {
+  color: var(--ju-gold-dim);
+}
+
+/* ── Dashboard image (card 1) ───────────────────── */
+.dashboardImg {
+  position: relative;
+  margin-top: 28px;
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  align-items: left;
+  overflow: hidden;
+  background: var(--ju-surface-low);
+}
+
+.dashboardImgInner {
+  object-fit: contain;
+  object-position: top left;
+  border-radius: 8px;
+}
+
+/* ── Marketing mosaic (card 4) ──────────────────── */
+.marketingText {
+  flex: 1;
+}
+
+.mosaic {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 160px;
+}
+
+.swatch {
+  height: 80px;
+  border-radius: 6px;
+}
+
+.swatchHigh {
+  background: var(--ju-surface-high);
+}
+.swatchTeal {
+  background: rgba(0, 106, 106, 0.18);
+}
+.swatchNavy {
+  background: rgba(4, 22, 39, 0.09);
+}
+.swatchLow {
+  background: var(--ju-surface-low);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .headerAccent {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 20px;
+  }
+
+  .cardWide,
+  .cardNarrow {
+    grid-column: span 12;
+  }
+
+  .cardRow {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .dashboardImg {
+    height: 260px;
+    border-radius: 8px;
+  }
+
+  .dashboardImgInner {
+    object-position: center;
+  }
+
+  .mosaic {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .swatch {
+    height: 60px;
+  }
+}

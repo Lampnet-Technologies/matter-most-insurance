@@ -1,0 +1,38 @@
+/*
+ * join-us-tokens.css
+ * Design tokens for the Join Us / Agent page.
+ * Imported at the top of every join-us .module.css file.
+ * Palette is identical to the contact page (same brand system).
+ */
+
+:root {
+  /* ── Brand ──────────────────────────────────────── */
+  --ju-navy: #041627;
+  --ju-teal: #006a6a;
+  --ju-teal-dark: #004f4f;
+  --ju-teal-container: #90efef;
+  --ju-gold: #cca830;
+  --ju-gold-light: #ffe088;
+  --ju-gold-dim: #e9c349;
+
+  /* ── Surfaces ───────────────────────────────────── */
+  --ju-surface: #f7fafc;
+  --ju-surface-low: #f1f4f6;
+  --ju-surface-card: #ffffff;
+  --ju-surface-high: #e5e9eb;
+  --ju-surface-highest: #e0e3e5;
+  --ju-navy-container: #1a2b3c; /* primary-container — CTA section bg */
+
+  /* ── Text ───────────────────────────────────────── */
+  --ju-text-primary: #181c1e;
+  --ju-text-muted: #44474c;
+  --ju-text-nav: #8192a7; /* on-primary-container */
+
+  /* ── Borders ────────────────────────────────────── */
+  --ju-border: #c4c6cd;
+  --ju-border-subtle: rgba(196, 198, 205, 0.15);
+
+  /* ── Typography ─────────────────────────────────── */
+  --ju-font-headline: "Newsreader", serif;
+  --ju-font-body: "Inter", sans-serif;
+}

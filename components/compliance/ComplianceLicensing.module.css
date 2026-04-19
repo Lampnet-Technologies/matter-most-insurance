@@ -1,0 +1,168 @@
+@import "./compliance-tokens.css";
+
+.section {
+  padding: 0 40px 80px;
+  background: var(--co-surface);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── 2/3 + 1/3 grid ─────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+  min-height: 380px;
+}
+
+/* ── Licensing card (light, wide) ───────────────── */
+.licensingCard {
+  background: var(--co-surface-low);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ghost gavel watermark — bottom-right */
+.watermark {
+  position: absolute;
+  right: -48px;
+  bottom: -48px;
+  width: 220px;
+  height: 220px;
+  color: var(--co-navy);
+  opacity: 0.05;
+  transition:
+    transform 0.7s ease,
+    opacity 0.3s;
+  pointer-events: none;
+}
+
+.licensingCard:hover .watermark {
+  transform: scale(1.1);
+}
+
+.licensingContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.licensingIcon {
+  color: var(--co-teal);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.licensingTitle {
+  font-family: var(--co-font-headline);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--co-navy);
+  line-height: 1.15;
+}
+
+.licensingBody {
+  font-family: var(--co-font-body);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--co-text-muted);
+  max-width: 420px;
+  flex: 1;
+}
+
+/* Registration badge pills */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.badge {
+  background: var(--co-surface-card);
+  color: var(--co-navy);
+  font-family: var(--co-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 2px;
+}
+
+/* ── Carrier card (dark, narrow) ────────────────── */
+.carrierCard {
+  background: var(--co-navy);
+  color: #ffffff;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.carrierTitle {
+  font-family: var(--co-font-headline);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.carrierBody {
+  font-family: var(--co-font-body);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--co-text-nav);
+}
+
+/* Ratings checklist */
+.ratingsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--co-font-body);
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.ratingCheck {
+  color: var(--co-gold-light);
+  flex-shrink: 0;
+  display: flex;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 0 20px 64px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .licensingCard,
+  .carrierCard {
+    padding: 36px 28px;
+  }
+  .carrierCard {
+    min-height: 280px;
+  }
+}

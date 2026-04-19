@@ -1,0 +1,113 @@
+@import "./join-us-tokens.css";
+
+.section {
+  padding: 88px 40px;
+  background: var(--ju-surface);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.heading {
+  font-family: var(--ju-font-headline);
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ju-navy);
+  letter-spacing: -0.015em;
+}
+
+.subhead {
+  font-family: var(--ju-font-body);
+  font-size: 16px;
+  color: var(--ju-text-muted);
+  max-width: 460px;
+  line-height: 1.65;
+}
+
+/* ── Steps grid ─────────────────────────────────── */
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ── Individual step ────────────────────────────── */
+.step {
+  position: relative;
+  padding-top: 56px; /* room for the ghost number to bleed up */
+}
+
+/* Ghost number — enormous, sits top-left, renders behind text */
+.ghostNum {
+  position: absolute;
+  top: -24px;
+  left: -12px;
+  font-family: var(--ju-font-headline);
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 1;
+  /* Matches source: surface-container-high which is #e5e9eb */
+  color: var(--ju-surface-high);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+.stepContent {
+  position: relative;
+  z-index: 1;
+}
+
+.stepTitle {
+  font-family: var(--ju-font-body);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ju-navy);
+  margin-bottom: 10px;
+}
+
+.stepBody {
+  font-family: var(--ju-font-body);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ju-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 20px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .ghostNum {
+    font-size: 72px;
+  }
+}

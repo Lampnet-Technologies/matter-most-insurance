@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Play } from "lucide-react";
 import styles from "./JourneySection.module.css";
 
 const steps = [
@@ -78,7 +79,7 @@ export default function JourneySection() {
                 aria-label="Play video"
                 onClick={() => setPlaying(true)}
               >
-                <PlayIcon />
+                <Play size={24} />
               </button>
             ) : (
               <div className={styles.playingState}>
@@ -103,19 +104,5 @@ export default function JourneySection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="white"
-      aria-hidden="true"
-    >
-      <polygon points="5,3 19,12 5,21" />
-    </svg>
   );
 }

@@ -1,0 +1,301 @@
+@import "./join-us-tokens.css";
+
+/* ── Section wrapper ────────────────────────────── */
+.section {
+  position: relative;
+  background: var(--ju-navy-container);
+  padding: 96px 40px;
+  overflow: hidden;
+}
+
+/* Right-half subtle architectural texture */
+.bgTexture {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 28px,
+    rgba(255, 255, 255, 0.018) 28px,
+    rgba(255, 255, 255, 0.018) 29px
+  );
+  pointer-events: none;
+}
+
+/* ── Two-column layout ──────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left column ────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.headline {
+  font-family: var(--ju-font-headline);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ── Testimonial ────────────────────────────────── */
+.testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.testimonialIcon {
+  flex-shrink: 0;
+  color: var(--ju-gold-dim);
+  margin-top: 2px;
+}
+
+.testimonialText {
+  font-family: var(--ju-font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonialCite {
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--ju-font-headline);
+}
+
+/* ── Right column — form card ───────────────────── */
+.rightCol {
+}
+
+.formCard {
+  background: var(--ju-surface);
+  border-radius: 10px;
+  padding: 48px 44px 52px;
+  box-shadow: 0 24px 64px rgba(4, 22, 39, 0.3);
+}
+
+.formTitle {
+  font-family: var(--ju-font-headline);
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ju-navy);
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* ── Form layout ────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Labels ─────────────────────────────────────── */
+.label {
+  font-family: var(--ju-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ju-text-muted);
+}
+
+/* ── Underline inputs ───────────────────────────── */
+.input {
+  width: 100%;
+  background: var(--ju-surface-low);
+  border: none;
+  border-bottom: 2px solid var(--ju-border);
+  border-radius: 0;
+  outline: none;
+  padding: 12px 0;
+  font-family: var(--ju-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ju-navy);
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-bottom-color: var(--ju-teal);
+}
+
+/* ── Select ─────────────────────────────────────── */
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  background: var(--ju-surface-low);
+  border: none;
+  border-bottom: 2px solid var(--ju-border);
+  border-radius: 0;
+  outline: none;
+  padding: 12px 28px 12px 0;
+  font-family: var(--ju-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ju-navy);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.select:focus {
+  border-bottom-color: var(--ju-teal);
+}
+
+.chevron {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ju-text-muted);
+  pointer-events: none;
+  display: flex;
+}
+
+/* ── Submit button ──────────────────────────────── */
+.submitBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 24px;
+  background: linear-gradient(
+    135deg,
+    var(--ju-teal) 0%,
+    var(--ju-teal-dark) 100%
+  );
+  color: #ffffff;
+  font-family: var(--ju-font-body);
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+  box-shadow: 0 8px 24px rgba(0, 106, 106, 0.25);
+  margin-top: 4px;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submitBtn svg {
+  transition: transform 0.2s;
+}
+
+.submitBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Disclaimer ─────────────────────────────────── */
+.disclaimer {
+  font-family: var(--ju-font-body);
+  font-size: 11px;
+  color: rgba(68, 71, 76, 0.55);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── Success state ──────────────────────────────── */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  gap: 14px;
+}
+
+.successIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--ju-teal);
+  background: rgba(0, 106, 106, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--ju-teal);
+  font-weight: 700;
+}
+
+.successHeading {
+  font-family: var(--ju-font-headline);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ju-navy);
+}
+
+.successBody {
+  font-family: var(--ju-font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ju-text-muted);
+  max-width: 280px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 72px 20px;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .formCard {
+    padding: 36px 28px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
