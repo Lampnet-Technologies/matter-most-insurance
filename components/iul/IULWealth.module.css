@@ -1,0 +1,111 @@
+@import "./iul-tokens.css";
+
+.section {
+  padding: 0 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Full-width dark panel with image right half */
+.inner {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--iul-navy);
+  min-height: 480px;
+}
+
+/* ── Left: copy ─────────────────────────────────── */
+.copyCol {
+  flex: 1;
+  padding: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--iul-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  /* secondary-fixed / teal light */
+  color: var(--iul-teal-fixed);
+}
+
+.heading {
+  font-family: var(--iul-font-headline);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.body {
+  font-family: var(--iul-font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  /* primary-fixed-dim at 80% opacity */
+  color: rgba(183, 200, 222, 0.8);
+  max-width: 440px;
+}
+
+/* ── Bullets checklist ──────────────────────────── */
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--iul-font-body);
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.bulletCheck {
+  flex-shrink: 0;
+  color: var(--iul-teal);
+  display: flex;
+}
+
+/* ── Right: image ───────────────────────────────── */
+.imageCol {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 0 20px;
+  }
+  .inner {
+    flex-direction: column;
+  }
+  .copyCol {
+    padding: 48px 32px;
+  }
+  .imageCol {
+    min-height: 280px;
+  }
+}

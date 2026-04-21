@@ -1,0 +1,157 @@
+@import "./iul-tokens.css";
+
+.section {
+  background: var(--iul-surface);
+  padding: 0 24px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header row ─────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.headerLeft {
+  flex-shrink: 0;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heading {
+  font-family: var(--iul-font-headline);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--iul-navy);
+  letter-spacing: -0.015em;
+}
+
+.subhead {
+  font-family: var(--iul-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--iul-text-muted);
+}
+
+/* Thin horizontal rule that fills remaining space */
+.headerRule {
+  flex: 1;
+  height: 1px;
+  background: var(--iul-border-subtle);
+  min-width: 40px;
+  margin-bottom: 8px; /* align with text baseline */
+}
+
+/* ── 3-column grid ──────────────────────────────── */
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Base card ──────────────────────────────────── */
+.card {
+  background: var(--iul-surface-low);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: var(--iul-surface-card);
+}
+
+/* Featured card — teal top border (Cash Value Growth) */
+.cardFeatured {
+  border-top: 4px solid var(--iul-teal);
+}
+
+/* ── Icon circle ────────────────────────────────── */
+.iconWrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(0, 106, 106, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--iul-teal);
+  flex-shrink: 0;
+}
+
+/* ── Card copy ──────────────────────────────────── */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--iul-font-headline);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--iul-navy);
+  line-height: 1.15;
+}
+
+.cardBody {
+  font-family: var(--iul-font-body);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--iul-text-muted);
+}
+
+/* Hover-reveal CTA row */
+.cardCTA {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--iul-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--iul-teal);
+  opacity: 0;
+  transition: opacity 0.2s;
+  padding-top: 8px;
+}
+
+.card:hover .cardCTA {
+  opacity: 1;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 0 20px 64px;
+  }
+  .headerRule {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

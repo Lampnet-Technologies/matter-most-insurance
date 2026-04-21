@@ -1,0 +1,136 @@
+@import "./services-tokens.css";
+
+.outerWrapper {
+  position: sticky !important;
+  top: 2rem;
+  /* stops sticking before it hits the footer */
+  max-height: calc(140vh - 4rem);
+  overflow-y: auto;
+  scrollbar-width: none; /* hide scrollbar if content is taller than viewport */
+  gap: 35rem;
+}
+
+.outerWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebarContainer {
+  background-color: var(--svc-surface-sidebar);
+  color: var(--svc-text-inverse);
+  padding: 4.5rem 4rem;
+  display: block;
+  grid-column: 4 / 4;
+  gap: 5rem;
+  min-height: 720px;
+  position: sticky;
+  top: 2rem;
+}
+
+.heading {
+  font-family: var(--svc-font-headline);
+  font-size: 3.6rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--svc-text-inverse);
+  margin: 0;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 1.65;
+  color: rgba(210, 228, 251, 0.65);
+  margin-bottom: 20px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+.listcontainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.listItem {
+  padding: 0;
+  border-radius: 6px;
+  display: flex;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.listItem:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iconWrapper {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--svc-secondary-container);
+  flex-shrink: 0;
+}
+
+.icon {
+  color: var(--svc-secondary-fixed);
+}
+
+.itemTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--svc-text-inverse);
+  margin: 0;
+  line-height: 1;
+}
+
+.itemSubtext {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(210, 228, 251, 0.4);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Ad sits below the list, inside the dark card */
+.adPlaceholder {
+  margin-top: 20px; /* pushes to bottom of flex container */
+  width: 100%;
+  aspect-ratio: 300 / 250; /* maintains 300×250 ratio, fluid width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.adText {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .outerWrapper {
+    position: static !important;
+    max-height: none;
+    overflow-y: visible;
+  }
+}

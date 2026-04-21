@@ -29,6 +29,8 @@ export default function ContactAgentBanner() {
               src="/contactagentbanner2.png"
               alt="Professional advisors working together"
               fill
+              sizes="fill"
+              loading="eager"
               className={styles.agentImage}
             />
           </div>

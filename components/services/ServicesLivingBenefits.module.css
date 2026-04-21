@@ -1,0 +1,93 @@
+@import './services-tokens.css';
+
+.section {
+  background: var(--svc-surface);
+  padding: 40px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── 12-column grid: 6 + 6 ──────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 64px;
+}
+
+/* ── Content columns ────────────────────────────── */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.numberLabel {
+  display: block;
+  font-family: var(--svc-font-headline);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--svc-secondary);
+}
+
+.heading {
+  font-family: var(--svc-font-headline);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--svc-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--svc-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--svc-text-muted);
+  max-width: 480px;
+}
+
+.cta {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--svc-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--svc-primary);
+  cursor: pointer;
+  border-bottom: 1px solid var(--svc-border-subtle);
+  transition: border-bottom-color 0.2s ease;
+}
+
+.cta:hover {
+  border-bottom-color: var(--svc-primary);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 60px 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .heading {
+    font-size: clamp(28px, 6vw, 36px);
+  }
+}

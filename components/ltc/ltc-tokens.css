@@ -1,0 +1,46 @@
+/*
+ * ltc-tokens.css
+ * Design tokens for the LTC (Long-Term Care) product page.
+ * Imported at the top of every ltc .module.css file.
+ */
+
+:root {
+  /* ── Brand ──────────────────────────────────────── */
+  --ltc-navy: #041627;
+  --ltc-teal: #006a6a;
+  --ltc-teal-dark: #004f4f;
+  --ltc-teal-container: #90efef; /* secondary-container */
+  --ltc-teal-on: #006e6e; /* on-secondary-container */
+  --ltc-gold: #cca830; /* tertiary-container */
+  --ltc-gold-dim: #e9c349; /* tertiary-fixed-dim */
+  --ltc-gold-light: #ffe088; /* tertiary-fixed */
+  --ltc-gold-on: #241a00; /* on-tertiary-fixed */
+  --ltc-navy-container: #1a2b3c; /* primary-container */
+  --ltc-navy-fixed: #d2e4fb; /* primary-fixed */
+
+  /* ── Surfaces ───────────────────────────────────── */
+  --ltc-surface: #f7fafc;
+  --ltc-surface-low: #f1f4f6;
+  --ltc-surface-card: #ffffff;
+  --ltc-surface-high: #e5e9eb;
+  --ltc-surface-highest: #e0e3e5;
+
+  /* ── Text ───────────────────────────────────────── */
+  --ltc-text-primary: #181c1e;
+  --ltc-text-muted: #44474c;
+  --ltc-text-nav: #8192a7; /* on-primary-container */
+
+  /* ── Borders ────────────────────────────────────── */
+  --ltc-border: #c4c6cd;
+  --ltc-border-subtle: rgba(196, 198, 205, 0.15);
+
+  /* ── Typography ─────────────────────────────────── */
+  --ltc-font-headline: "Newsreader", Georgia, serif;
+  --ltc-font-body: "DM Sans", system-ui, sans-serif;
+
+  /* ── Effects ────────────────────────────────────── */
+  --ltc-shadow-editorial: 0 40px 40px -20px rgba(24, 28, 30, 0.04);
+  --ltc-shadow-card:
+    0 4px 16px rgba(4, 22, 39, 0.06), 0 1px 3px rgba(4, 22, 39, 0.04);
+  --ltc-shadow-float: 0 12px 40px rgba(4, 22, 39, 0.12);
+}

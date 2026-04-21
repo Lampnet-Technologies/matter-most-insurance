@@ -1,0 +1,35 @@
+/*
+ * tlb-tokens.css — Term Life (TLB) page design tokens.
+ */
+:root {
+  --tlb-navy: #041627;
+  --tlb-teal: #006a6a;
+  --tlb-teal-dark: #004f4f;
+  --tlb-teal-container: #90efef;
+  --tlb-teal-on: #006e6e;
+  --tlb-gold-light: #ffe088;
+  --tlb-gold-on: #241a00;
+  --tlb-navy-container: #1a2b3c;
+  --tlb-navy-fixed: #d2e4fb;
+
+  --tlb-surface: #f7fafc;
+  --tlb-surface-low: #f1f4f6;
+  --tlb-surface-card: #ffffff;
+  --tlb-surface-high: #e5e9eb;
+
+  --tlb-text-primary: #181c1e;
+  --tlb-text-muted: #44474c;
+  --tlb-text-nav: #8192a7;
+
+  --tlb-border: #c4c6cd;
+  --tlb-border-subtle: rgba(196, 198, 205, 0.3);
+
+  --tlb-font-headline: "Newsreader", Georgia, serif;
+  --tlb-font-body: "Inter", system-ui, sans-serif;
+
+  --tlb-shadow-xl:
+    0 24px 48px rgba(4, 22, 39, 0.14), 0 4px 12px rgba(4, 22, 39, 0.08);
+  --tlb-shadow-totem: 0 16px 48px rgba(4, 22, 39, 0.18);
+  --tlb-shadow-card:
+    0 1px 4px rgba(4, 22, 39, 0.04), 0 4px 16px rgba(4, 22, 39, 0.06);
+}

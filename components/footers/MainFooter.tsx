@@ -8,17 +8,17 @@ import styles from "./MainFooter.module.css";
 const solutionLinks = [
   {
     label: "Indexed Universal Life",
-    href: "/solutions/indexed-universal-life",
+    href: "/indexed-universal-life",
   },
   {
     label: "Equity Indexed Annuity",
-    href: "/solutions/equity-indexed-annuity",
+    href: "/equity-indexed-annuity",
   },
   { label: "Long Term Care",
-    href: "/solutions/long-term-care" },
+    href: "/long-term-care" },
   {
     label: "Terminal Loss Benefit",
-    href: "/solutions/terminal-loss-benefit",
+    href: "/term-life-benefits",
   },
 ];
 

@@ -1,0 +1,168 @@
+@import "./iul-tokens.css";
+
+.section {
+  background: var(--iul-surface);
+  padding: 48px 24px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── 7/12 + 5/12 grid ───────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════════════════
+   LEFT COLUMN
+════════════════════════════════════════════════════ */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Mega headline — very large, tight tracking, medium weight */
+.headline {
+  font-family: var(--iul-font-headline);
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 500;
+  color: var(--iul-navy);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* "Hero" — italic, inherits size */
+.heroWord {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.subhead {
+  font-family: var(--iul-font-body);
+  font-size: clamp(15px, 1.8vw, 19px);
+  line-height: 1.7;
+  color: var(--iul-text-muted);
+  max-width: 560px;
+}
+
+.ctaRow {
+  padding-top: 8px;
+}
+
+/* Primary CTA — teal gradient, large */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--iul-teal) 0%,
+    var(--iul-teal-dark) 100%
+  );
+  color: #ffffff;
+  font-family: var(--iul-font-body);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 32px;
+  border-radius: 8px;
+  box-shadow: var(--iul-shadow-xl);
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.btnPrimary:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+.btnPrimary svg {
+  transition: transform 0.2s;
+}
+.btnPrimary:hover svg {
+  transform: translateX(4px);
+}
+
+/* ════════════════════════════════════════════════════
+   RIGHT COLUMN
+════════════════════════════════════════════════════ */
+.rightCol {
+  position: relative;
+  /* Extra space below for the overflowing totem */
+  padding-bottom: 48px;
+}
+
+/* Photo frame */
+.imageFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--iul-shadow-xl);
+  background: var(--iul-surface-low);
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Totem: no rotation, gold left border, white bg, bottom-left overlap */
+.totem {
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+  z-index: 10;
+  background: var(--iul-surface-card);
+  border-left: 4px solid var(--iul-gold-light);
+  padding: 20px 24px;
+  max-width: 260px;
+  box-shadow: var(--iul-shadow-totem);
+}
+
+.totemValue {
+  font-family: var(--iul-font-headline);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--iul-navy);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.totemLabel {
+  font-family: var(--iul-font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--iul-text-muted);
+  line-height: 1.4;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .totem {
+    left: -8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 32px 20px 72px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .rightCol {
+    max-width: 480px;
+  }
+  .headline {
+    font-size: clamp(44px, 11vw, 68px);
+  }
+}

@@ -3,18 +3,20 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Menu, X } from "lucide-react";
-import styles from "./MainNav.module.css";
+import { Menu, X } from "lucide-react";
+import styles from "./NavThree.module.css";
 import { Button } from "@base-ui/react";
 
 const navLinks = [
   { label: "Dashboard", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Resources", href: "/resources" },
-  { label: "Support", href: "/support" },
+  { label: "IUL", href: "/indexed-universal-life" },
+  { label: "EIA", href: "/equity-indexed-annuity" },
+  { label: "LTC", href: "/long-term-care" },
+  { label: "TLB", href: "/term-life-benefits" },
+  { label: "Expertise", href: "/services" },
 ];
 
-export default function MainNav() {
+export default function NavThree() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -54,15 +56,8 @@ export default function MainNav() {
 
         {/* Right actions */}
         <div className={styles.actions}>
-          <button
-            className={styles.bellBtn}
-            aria-label="Notifications"
-            title="Notifications"
-          >
-            <Bell size={18} />
-          </button>
-          <Link href="/services" className={styles.ctaBtn}>
-            Secure Plan
+          <Link href="/get-a-quote" className={styles.ctaBtn}>
+            Get a Consultation
           </Link>
 
           {/* Mobile hamburger */}
@@ -98,13 +93,13 @@ export default function MainNav() {
             })}
           </ul>
           <div className={styles.mobileActions}>
-          <Link
-            href="/services"
-            className={styles.mobileCta}
-            onClick={() => setMobileOpen(false)}
-          >
-            Secure Plan
-          </Link>
+            <Link
+              href="/get-a-quote"
+              className={styles.mobileCta}
+              onClick={() => setMobileOpen(false)}
+            >
+              Get a Quote
+            </Link>
           </div>
         </div>
       )}

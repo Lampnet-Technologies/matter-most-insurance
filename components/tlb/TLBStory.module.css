@@ -1,0 +1,135 @@
+@import "./tlb-tokens.css";
+
+.section { background: var(--tlb-surface); padding: 0 32px 96px; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* White rounded card with shadow */
+.card {
+  background: var(--tlb-surface-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--tlb-border-subtle);
+  box-shadow: var(--tlb-shadow-card);
+  display: flex;
+  flex-direction: row;
+  min-height: 540px;
+}
+
+/* ── Left: image ────────────────────────────────── */
+.imageCol {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.storyImg { object-fit: cover; object-position: center; }
+
+/* Subtle navy tint overlay */
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 22, 39, 0.1);
+  pointer-events: none;
+}
+
+/* ── Right: content ─────────────────────────────── */
+.contentCol {
+  flex: 1;
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Eyebrow row */
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tlb-teal);
+}
+
+.eyebrow {
+  font-family: var(--tlb-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: var(--tlb-font-headline);
+  font-size: clamp(26px, 4vw, 46px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--tlb-navy);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* Body paragraphs */
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--tlb-font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--tlb-text-muted);
+}
+
+.bodyText strong { color: var(--tlb-navy); font-weight: 700; }
+
+.pullQuote {
+  font-family: var(--tlb-font-headline);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--tlb-navy);
+  line-height: 1.4;
+}
+
+/* Attribution */
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.attributionIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 106, 106, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tlb-teal);
+  flex-shrink: 0;
+}
+
+.attributionName {
+  font-family: var(--tlb-font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tlb-navy);
+}
+
+.attributionSub {
+  font-family: var(--tlb-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tlb-text-muted);
+  margin-top: 2px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { padding: 0 20px 64px; }
+  .card { flex-direction: column; }
+  .imageCol { min-height: 300px; flex: none; }
+  .contentCol { padding: 36px 28px 40px; gap: 20px; }
+}

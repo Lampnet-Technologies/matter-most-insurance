@@ -1,0 +1,225 @@
+@import "./ltc-tokens.css";
+
+.section {
+  background: var(--ltc-surface);
+  padding: 80px 40px 112px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── 7/12 + 5/12 grid ───────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════════════════
+   LEFT COLUMN
+════════════════════════════════════════════════════ */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* "Product Spotlight" gold pill */
+.pill {
+  display: inline-flex;
+  align-self: flex-start;
+  background: var(--ltc-gold-light);
+  color: var(--ltc-gold-on);
+  font-family: var(--ltc-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.headline {
+  font-family: var(--ltc-font-headline);
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 700;
+  color: var(--ltc-navy);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.subhead {
+  font-family: var(--ltc-font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ltc-text-muted);
+  max-width: 540px;
+}
+
+/* CTA row */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 8px;
+  align-items: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    var(--ltc-teal) 0%,
+    var(--ltc-teal-dark) 100%
+  );
+  color: #ffffff;
+  font-family: var(--ltc-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 6px;
+  box-shadow: var(--ltc-shadow-editorial);
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+}
+.btnPrimary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  color: var(--ltc-navy);
+  font-family: var(--ltc-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.btnGhost:hover {
+  background: var(--ltc-surface-low);
+}
+
+/* ════════════════════════════════════════════════════
+   RIGHT COLUMN
+════════════════════════════════════════════════════ */
+.rightCol {
+  position: relative;
+  /* Extra bottom padding to accommodate the overflowing stat card */
+  padding-bottom: 64px;
+}
+
+/* Tilted image frame — rotate(2deg) matches the source */
+.imageFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: rotate(2deg);
+  box-shadow: var(--ltc-shadow-editorial);
+  background: var(--ltc-surface-low);
+}
+
+/* Grayscale + multiply blend — matches source */
+.heroImage {
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+
+/* Floating stat card — bottom-left, overlaps the image */
+.statCard {
+  position: absolute;
+  bottom: 0;
+  left: -32px;
+  z-index: 10;
+  background: var(--ltc-surface-card);
+  border: 1px solid var(--ltc-border-subtle);
+  border-radius: 10px;
+  padding: 28px;
+  max-width: 280px;
+  box-shadow: var(--ltc-shadow-float);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.statRow {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+
+/* Gold vertical bar */
+.statBar {
+  width: 5px;
+  border-radius: 3px;
+  background: var(--ltc-gold-light);
+  flex-shrink: 0;
+}
+
+.statValue {
+  font-family: var(--ltc-font-headline);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ltc-navy);
+  line-height: 1;
+  padding-left: 12px;
+}
+
+.statLabel {
+  font-family: var(--ltc-font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ltc-text-muted);
+  padding-left: 12px;
+  margin-top: 3px;
+}
+
+.statQuote {
+  font-family: var(--ltc-font-body);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ltc-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .statCard {
+    left: -16px;
+    max-width: 240px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 60px 20px 80px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+  .rightCol {
+    padding-bottom: 80px;
+    max-width: 480px;
+  }
+  .headline {
+    font-size: clamp(36px, 9vw, 52px);
+  }
+}

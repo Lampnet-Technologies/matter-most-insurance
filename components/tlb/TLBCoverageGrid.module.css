@@ -1,0 +1,70 @@
+@import "./tlb-tokens.css";
+
+.section {
+  background: var(--tlb-surface-low);
+  border-radius: 10px;
+  margin: 0 32px;
+  padding: 72px 64px 80px;
+}
+
+.container { max-width: 960px; margin: 0 auto; }
+
+.heading {
+  font-family: var(--tlb-font-headline);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--tlb-navy);
+  text-align: center;
+  margin-bottom: 56px;
+  letter-spacing: -0.015em;
+}
+
+/* ── 2×2 card grid ──────────────────────────────── */
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Individual white card */
+.card {
+  background: var(--tlb-surface-card);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--tlb-shadow-card);
+}
+
+/* Teal eyebrow */
+.eyebrow {
+  font-family: var(--tlb-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tlb-teal);
+}
+
+.cardTitle {
+  font-family: var(--tlb-font-headline);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--tlb-navy);
+  line-height: 1.15;
+}
+
+.cardBody {
+  font-family: var(--tlb-font-body);
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: var(--tlb-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { margin: 0 20px; padding: 48px 28px 56px; }
+  .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,69 @@
+@import "./eia-tokens.css";
+
+.section {
+  background: var(--eia-surface);
+  padding: 96px 32px;
+  text-align: center;
+}
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.heading {
+  font-family: var(--eia-font-headline);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--eia-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  font-family: var(--eia-font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--eia-text-muted);
+  max-width: 520px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    var(--eia-teal) 0%,
+    var(--eia-teal-dark) 100%
+  );
+  color: #fff;
+  font-family: var(--eia-font-body);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 48px;
+  border-radius: 6px;
+  box-shadow: var(--eia-shadow-xl);
+  margin-top: 8px;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.btn:hover {
+  transform: scale(1.04);
+  opacity: 0.95;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 64px 20px;
+  }
+  .btn {
+    width: 100%;
+    padding: 18px 24px;
+  }
+}

@@ -1,0 +1,36 @@
+/*
+ * eia-tokens.css — Equity Indexed Annuity page design tokens.
+ * Same brand palette, page-scoped prefix.
+ */
+:root {
+  --eia-navy: #041627;
+  --eia-teal: #006a6a;
+  --eia-teal-dark: #004f4f;
+  --eia-teal-fixed: #93f2f2;
+  --eia-gold-light: #ffe088;
+  --eia-gold-on: #241a00;
+  --eia-gold-variant: #574500;
+  --eia-navy-container: #1a2b3c;
+  --eia-navy-fixed: #d2e4fb;
+  --eia-navy-fixed-dim: #b7c8de;
+
+  --eia-surface: #f7fafc;
+  --eia-surface-low: #f1f4f6;
+  --eia-surface-card: #ffffff;
+  --eia-surface-high: #e5e9eb;
+  --eia-surface-highest: #e0e3e5;
+
+  --eia-text-primary: #181c1e;
+  --eia-text-muted: #44474c;
+  --eia-text-nav: #8192a7;
+
+  --eia-border: #c4c6cd;
+  --eia-border-subtle: rgba(196, 198, 205, 0.2);
+
+  --eia-font-headline: "Newsreader", Georgia, serif;
+  --eia-font-body: "Inter", system-ui, sans-serif;
+
+  --eia-shadow-xl:
+    0 24px 48px rgba(4, 22, 39, 0.14), 0 4px 12px rgba(4, 22, 39, 0.08);
+  --eia-shadow-totem: 0 16px 48px rgba(4, 22, 39, 0.18);
+}

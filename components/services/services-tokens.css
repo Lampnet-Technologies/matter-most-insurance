@@ -1,0 +1,35 @@
+/*
+ * services-tokens.css
+ * Design tokens for the Services Overview page.
+ * Imported at the top of every services .module.css file.
+ */
+
+:root {
+  /* ── Brand ──────────────────────────────────────── */
+  --svc-primary: #041627;
+  --svc-primary-container: rgba(26, 43, 60, 0.3); /* For image overlay */
+  --svc-primary-fixed: #d2e4fb;
+  --svc-secondary: #006a6a;
+  --svc-secondary-container: rgba(144, 239, 239, 0.2);
+  --svc-secondary-fixed: #93f2f2;
+  --svc-tertiary-fixed: #ffe088;
+
+  /* ── Surfaces ───────────────────────────────────── */
+  --svc-surface: #f7fafc;
+  --svc-surface-low: #f1f4f6;
+  --svc-surface-lowest: #ffffff;
+  --svc-surface-sidebar: #041627; /* Re-using primary for sidebar bg */
+
+  /* ── Text ───────────────────────────────────────── */
+  --svc-text-primary: #181c1e;
+  --svc-text-muted: #44474c;
+  --svc-text-inverse: #ffffff;
+
+  /* ── Borders ────────────────────────────────────── */
+  --svc-border-subtle: rgba(4, 22, 39, 0.2); /* primary/20 */
+  --svc-border-inverse: rgba(255, 255, 255, 0.05);
+
+  /* ── Typography ─────────────────────────────────── */
+  --svc-font-headline: "Newsreader", serif;
+  --svc-font-body: "Inter", sans-serif;
+}

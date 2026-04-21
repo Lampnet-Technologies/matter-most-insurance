@@ -1,0 +1,189 @@
+@import "./tlb-tokens.css";
+
+.section {
+  background: var(--tlb-surface);
+  padding: 64px 32px 112px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Left ───────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Gold pill badge */
+.pill {
+  display: inline-flex;
+  align-self: flex-start;
+  background: var(--tlb-gold-light);
+  color: var(--tlb-gold-on);
+  font-family: var(--tlb-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+/* Very large tight headline */
+.headline {
+  font-family: var(--tlb-font-headline);
+  font-size: clamp(48px, 7.5vw, 88px);
+  font-weight: 700;
+  color: var(--tlb-navy);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  /* tracking-tight matching source */
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.subhead {
+  font-family: var(--tlb-font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--tlb-text-muted);
+  max-width: 560px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--tlb-teal) 0%,
+    var(--tlb-teal-dark) 100%
+  );
+  color: #fff;
+  font-family: var(--tlb-font-body);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 6px;
+  box-shadow: var(--tlb-shadow-xl);
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+}
+.btnPrimary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.btnPrimary svg {
+  transition: transform 0.2s;
+}
+.btnPrimary:hover svg {
+  transform: translateX(4px);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+    text-decoration: none;
+  background: var(--tlb-navy-container);
+  color: var(--tlb-navy-fixed);
+  font-family: var(--tlb-font-body);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+.btnSecondary:hover {
+  opacity: 0.9;
+}
+
+/* ── Right ──────────────────────────────────────── */
+.rightCol {
+  position: relative;
+  padding-bottom: 56px;
+}
+
+.imageFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--tlb-shadow-xl);
+  background: var(--tlb-surface-low);
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(20%) contrast(1.1);
+}
+
+/* 4px gold-border totem — bottom-left, rounded corners per source */
+.totem {
+  position: absolute;
+  bottom: 0;
+  left: -32px;
+  z-index: 10;
+  background: var(--tlb-surface-card);
+  border-left: 4px solid var(--tlb-gold-light);
+  border-radius: 8px;
+  padding: 24px 28px;
+  max-width: 260px;
+  box-shadow: var(--tlb-shadow-totem);
+}
+
+.totemValue {
+  font-family: var(--tlb-font-headline);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--tlb-navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.totemLabel {
+  font-family: var(--tlb-font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--tlb-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 40px 20px 80px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .totem {
+    left: -8px;
+  }
+  .headline {
+    font-size: clamp(40px, 10vw, 64px);
+  }
+}

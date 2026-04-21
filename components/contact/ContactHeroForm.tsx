@@ -137,6 +137,8 @@ export default function ContactHeroForm() {
               src="/contactagentbanner1.png"
               alt="Partner perspective - Protecting assets across 48 states"
               fill
+              sizes="fill"
+              loading="eager"
               className={styles.adSlotImage}
             />
             <div className={styles.adSlotContent}>

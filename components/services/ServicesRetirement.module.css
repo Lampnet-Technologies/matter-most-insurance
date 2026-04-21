@@ -1,0 +1,113 @@
+@import "./services-tokens.css";
+
+.section {
+  background: var(--svc-surface-low);
+  padding: 80px 40px;
+}
+
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Content ────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.numberLabel {
+  display: block;
+  font-family: var(--svc-font-headline);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--svc-secondary);
+}
+
+.heading {
+  font-family: var(--svc-font-headline);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--svc-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--svc-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--svc-text-muted);
+  max-width: 480px;
+}
+
+/* ── Cards below content ────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 26px;
+  background: var(--svc-surface-lowest);
+  padding: 24px;
+}
+
+.cardIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--svc-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--svc-secondary);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeading {
+  font-family: var(--svc-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--svc-primary);
+  margin: 0;
+}
+
+.cardText {
+  font-family: var(--svc-font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--svc-text-muted);
+  margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 60px 20px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .heading {
+    font-size: clamp(28px, 6vw, 36px);
+  }
+}

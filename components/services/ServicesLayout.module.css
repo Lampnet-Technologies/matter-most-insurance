@@ -1,0 +1,37 @@
+.servicesGrid {
+  display: grid !important;
+  grid-template-columns: 8fr 4fr;
+  align-items: start; /* critical for sticky to work */
+  gap: 0;
+}
+
+.mainCol {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.sidebarCol {
+  grid-column: 2;
+  display: block !important;
+  min-width: 0;
+  /* height must match the grid row so sticky has scroll room */
+  align-self: stretch;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mainCol {
+    grid-column: 1;
+  }
+
+  /* Move sidebar below main content, full width — no longer hidden */
+  .sidebarCol {
+    grid-column: 1 !important;
+    display: block !important;
+    align-self: auto;
+  }
+}

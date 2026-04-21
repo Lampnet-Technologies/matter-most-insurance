@@ -1,0 +1,46 @@
+/*
+ * iul-tokens.css
+ * Design tokens for the IUL (Indexed Universal Life) product page.
+ * Imported at the top of every iul .module.css file.
+ */
+
+:root {
+  /* ── Brand ──────────────────────────────────────── */
+  --iul-navy: #041627;
+  --iul-teal: #006a6a;
+  --iul-teal-dark: #004f4f;
+  --iul-teal-on: #006e6e;
+  --iul-teal-container: #90efef;
+  --iul-teal-fixed: #93f2f2;
+  --iul-teal-fixed-dim: #76d6d5;
+  --iul-gold-light: #ffe088; /* tertiary-fixed */
+  --iul-gold-on: #241a00; /* on-tertiary-fixed */
+  --iul-navy-container: #1a2b3c; /* primary-container */
+  --iul-navy-fixed: #d2e4fb; /* primary-fixed */
+  --iul-navy-fixed-dim: #b7c8de; /* primary-fixed-dim */
+
+  /* ── Surfaces ───────────────────────────────────── */
+  --iul-surface: #f7fafc;
+  --iul-surface-low: #f1f4f6;
+  --iul-surface-card: #ffffff;
+  --iul-surface-container: #ebeef0;
+  --iul-surface-high: #e5e9eb;
+
+  /* ── Text ───────────────────────────────────────── */
+  --iul-text-primary: #181c1e;
+  --iul-text-muted: #44474c;
+  --iul-text-nav: #8192a7;
+
+  /* ── Borders ────────────────────────────────────── */
+  --iul-border: #c4c6cd;
+  --iul-border-subtle: rgba(196, 198, 205, 0.2);
+
+  /* ── Typography ─────────────────────────────────── */
+  --iul-font-headline: "Newsreader", Georgia, serif;
+  --iul-font-body: "DM Sans", system-ui, sans-serif;
+
+  /* ── Effects ────────────────────────────────────── */
+  --iul-shadow-xl:
+    0 24px 48px rgba(4, 22, 39, 0.14), 0 4px 12px rgba(4, 22, 39, 0.08);
+  --iul-shadow-totem: 0 16px 48px rgba(4, 22, 39, 0.18);
+}

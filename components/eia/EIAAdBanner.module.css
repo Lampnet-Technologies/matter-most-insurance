@@ -1,0 +1,33 @@
+@import "./eia-tokens.css";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 32px 32px 0;
+}
+
+.slot {
+  width: 728px;
+  max-width: 100%;
+  height: 90px;
+  background: var(--eia-surface-high);
+  border-left: 4px solid var(--eia-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-family: var(--eia-font-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eia-text-muted);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    padding: 24px 20px 0;
+  }
+}

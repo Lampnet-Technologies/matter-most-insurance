@@ -1,0 +1,186 @@
+@import "./ltc-tokens.css";
+
+.section {
+  background: var(--ltc-surface);
+  padding: 96px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Two-column layout ──────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════════════════
+   LEFT: 2×2 MOSAIC
+════════════════════════════════════════════════════ */
+.mosaicCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* Column A: photo then teal card */
+.mosaicColA {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Column B: navy card then photo — offset 48px down for stagger */
+.mosaicColB {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 48px;
+}
+
+/* Photo frames */
+.mosaicPhotoA,
+.mosaicPhotoB {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mosaicPhotoA {
+  height: 240px;
+}
+.mosaicPhotoB {
+  height: 240px;
+}
+
+.mosaicImg {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Coloured mosaic cards */
+.mosaicCard {
+  border-radius: 10px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-end;
+  min-height: 160px;
+}
+
+.mosaicCardTeal {
+  background: var(--ltc-teal);
+}
+
+.mosaicCardNavy {
+  background: var(--ltc-navy-container);
+}
+
+.mosaicCardText {
+  font-family: var(--ltc-font-headline);
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+/* ════════════════════════════════════════════════════
+   RIGHT: EDITORIAL CONTENT
+════════════════════════════════════════════════════ */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heading {
+  font-family: var(--ltc-font-headline);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--ltc-navy);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--ltc-font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ltc-text-muted);
+}
+
+.bodyEmphasis {
+  font-weight: 700;
+  color: var(--ltc-navy);
+}
+
+/* ── Checklist ──────────────────────────────────── */
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  color: var(--ltc-teal);
+  margin-top: 2px;
+  display: flex;
+}
+
+.checkTitle {
+  font-family: var(--ltc-font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ltc-navy);
+  margin-bottom: 4px;
+}
+
+.checkBody {
+  font-family: var(--ltc-font-body);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ltc-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  /* On mobile show content first (order matches source mobile) */
+  .mosaicCol {
+    order: 2;
+  }
+  .contentCol {
+    order: 1;
+  }
+
+  .mosaicPhotoA {
+    height: 180px;
+  }
+  .mosaicPhotoB {
+    height: 180px;
+  }
+  .mosaicColB {
+    padding-top: 32px;
+  }
+}
