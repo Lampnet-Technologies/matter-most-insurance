@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Shield, Wallet, Activity, FileSignature } from "lucide-react";
 import styles from "./ServicesSidebar.module.css";
 
@@ -14,26 +15,25 @@ export default function ServicesSidebar() {
 
         <div className={styles.list}>
           {[
-            { icon: Shield, title: "IUL", subtitle: "Indexed Universal Life" },
-            { icon: Wallet, title: "EIA", subtitle: "Equity Indexed Annuity" },
-            { icon: Activity, title: "LTC", subtitle: "Long-Term Care" },
+            { icon: Shield, title: "IUL", subtitle: "Indexed Universal Life", href: "/indexed-universal-life" },
+            { icon: Wallet, title: "EIA", subtitle: "Equity Indexed Annuity", href: "/equity-indexed-annuity" },
+            { icon: Activity, title: "LTC", subtitle: "Long-Term Care", href: "/long-term-care" },
             {
               icon: FileSignature,
               title: "TLB",
               subtitle: "Term with Living Benefits",
+              href: "/term-life-benefits",
             },
           ].map((item, index) => (
-            <div key={index} className={styles.listItem}>
-              <div className={styles.listcontainer}>
-                <div className={styles.iconWrapper}>
-                  <item.icon size={18} className={styles.icon} />
-                </div>
-                <div className={styles.textWrapper}>
-                  <h4 className={styles.itemTitle}>{item.title}</h4>
-                  <p className={styles.itemSubtext}>{item.subtitle}</p>
-                </div>
+            <Link key={index} href={item.href} className={styles.listItem}>
+              <div className={styles.iconWrapper}>
+                <item.icon size={18} className={styles.icon} />
               </div>
-            </div>
+              <div className={styles.textWrapper}>
+                <h4 className={styles.itemTitle}>{item.title}</h4>
+                <p className={styles.itemSubtext}>{item.subtitle}</p>
+              </div>
+            </Link>
           ))}
         </div>
 
