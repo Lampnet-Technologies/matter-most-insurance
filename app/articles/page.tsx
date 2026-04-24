@@ -1,35 +1,74 @@
 import React from "react";
-
+import { client } from "@/sanity/lib/client";
 import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
+import ArticleCard from "@/components/article/ArticleCard";
+import styles from "./articles.module.css";
 
-export default function ArticlesPage() {
+export interface Post {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  mainImage: {
+    asset: {
+      _ref: string;
+    };
+  };
+  excerpt?: string;
+  publishedAt: string;
+  author?: {
+    name: string;
+  };
+  categories?: Array<{
+    title: string;
+  }>;
+}
+
+export default async function ArticlesPage() {
+  const posts = await client.fetch<Post[]>(
+    `*[_type == "post"] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      mainImage {
+        asset
+      },
+      excerpt,
+      publishedAt,
+      author->{
+        name
+      },
+      categories[]->{
+        title
+      }
+    }`,
+  );
+
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className={styles.section}>
       <MainNav />
 
-      <main id="main-content">
-        <section style={{ padding: "60px 40px" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <h1
-              style={{
-                fontSize: "48px",
-                fontWeight: "700",
-                marginBottom: "24px",
-              }}
-            >
-              Our Articles
-            </h1>
-            <p
-              style={{
-                fontSize: "16px",
-                lineHeight: "1.6",
-                color: "#44474c",
-                marginBottom: "32px",
-              }}
-            >
-                Informative articles and resources coming soon.
+      <main id="main-content" className={styles.main}>
+        <section className={styles.section_content}>
+          <div className={styles.container}>
+            <h1 className={styles.heading}>Our Articles</h1>
+            <p className={styles.subheading}>
+              Explore our latest articles and insights.
             </p>
+
+            {posts.length > 0 ? (
+              <div className={styles.grid}>
+                {posts.map((post) => (
+                  <ArticleCard key={post._id} post={post} />
+                ))}
+              </div>
+            ) : (
+              <p className={styles.emptyState}>
+                No articles found yet. Check back soon!
+              </p>
+            )}
           </div>
         </section>
       </main>

@@ -1,39 +1,54 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import styles from "./KnowledgeHubSection.module.css";
 
-const articles = [
-  {
-    category: "Wealth Preservation",
-    title: "The Infinite Banking Protocol: Beyond Standard Coverage",
-    excerpt:
-      "Discover how cash-value accumulation can serve as your personal private bank while maintaining maximum protection levels.",
-    href: "/articles/infinite-banking",
-    image: "/Container%20(10).png",
-    imageAlt: "Editorial cover for wealth preservation",
-  },
-  {
-    category: "Risk Analysis",
-    title: "The 5 Pillars of Business Continuity in Volatile Markets",
-    excerpt:
-      "Protecting your enterprise means planning for the unexpected. We analyse the core structures of resilient businesses.",
-    href: "/articles/business-continuity",
-    image: "/Risk%20Analysis.png",
-    imageAlt: "Editorial cover for risk analysis",
-  },
-  {
-    category: "Legacy Building",
-    title: "Structured Settlement vs. Lump Sum: A Hero's Guide",
-    excerpt:
-      "Strategic distributions of wealth can ensure multiple generations remain secure. Which path fits your long-term roadmap?",
-    href: "/articles/settlement-guide",
-    image: "/Legacy%20Building.png",
-    imageAlt: "Editorial cover for legacy building",
-  },
-];
+interface Post {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  excerpt?: string;
+  mainImage?: {
+    asset: {
+      _ref: string;
+    };
+    alt?: string;
+  };
+  categories?: Array<{
+    title: string;
+  }>;
+}
 
-export default function KnowledgeHubSection() {
+export default async function KnowledgeHubSection() {
+  const posts = await client.fetch<Post[]>(
+    `*[_type == "post"] | order(publishedAt desc)[0...3] {
+      _id,
+      title,
+      slug,
+      excerpt,
+      mainImage {
+        asset,
+        alt
+      },
+      categories[]->{
+        title
+      }
+    }`,
+  );
+
+  const articles = posts.map((post) => ({
+    category: post.categories?.[0]?.title || "Insights",
+    title: post.title,
+    excerpt: post.excerpt || "Read more about this topic.",
+    href: `/articles/${post.slug.current}`,
+    image: post.mainImage ? urlFor(post.mainImage).url() : "/Risk20%Analysis.png",
+    imageAlt: post.mainImage?.alt || post.title,
+  }));
+
   return (
     <section className={styles.section} aria-label="Knowledge Hub">
       <div className={styles.container}>
