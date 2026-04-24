@@ -5,7 +5,7 @@ import MainFooter from "@/components/footers/MainFooter";
 
 import AdBanner from "@/components/ui/AdBanner";
 
-export default function ResourcesPage() {
+export default function AffiliatePage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
@@ -23,7 +23,7 @@ export default function ResourcesPage() {
                 marginBottom: "24px",
               }}
             >
-              Resources
+             Affiliate Program Coming Soon
             </h1>
             <p
               style={{
@@ -33,7 +33,7 @@ export default function ResourcesPage() {
                 marginBottom: "32px",
               }}
             >
-              Resources content coming soon.
+              Affiliates content coming soon.
             </p>
           </div>
         </section>

@@ -8,7 +8,7 @@ import styles from "./NavTwo.module.css";
 import { Button } from "@base-ui/react";
 
 const navLinks = [
-  { label: "Dashboard", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Join Us", href: "/join-us" },
   { label: "Contact", href: "/contact" },
   { label: "Compliance", href: "/compliance" },

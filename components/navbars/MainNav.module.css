@@ -56,8 +56,9 @@
 .link {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 6px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
@@ -68,6 +69,10 @@
   border-radius: var(--radius-sm);
   transition: color 0.15s;
   text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -86,6 +91,59 @@
   height: 2px;
   background: #006a6a;
   border-radius: 1px;
+}
+
+.chevronIcon {
+  transition: transform 0.15s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.productDropdownContainer {
+  position: relative;
+}
+
+/* ── Dropdown Menu ──────────────────────── */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  min-width: 280px;
+  padding: 8px 0;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.15s;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.dropdownItem:hover {
+  background: #f0f8f8;
+  color: #006a6a;
+  padding-left: 4px;
+}
+
+.dropdownItemActive {
+  background: #f0f8f8;
+  color: #006a6a;
+  font-weight: 600;
 }
 
 /* ── Actions ────────────────────────────── */
@@ -127,11 +185,11 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 9px 18px;
-  border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  border-radius: 5px;
   transition:
     background 0.2s,
     transform 0.15s;
@@ -164,6 +222,46 @@
   border-color: var(--border);
 }
 
+/* ── Dropdown Menu ──────────────────────── */
+.dropdownContent {
+  background: white !important;
+  min-width: 280px;
+}
+
+.dropdownContent :global([data-slot="dropdown-menu-item"]) {
+  background: white;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 12px !important;
+  margin: 2px 0 !important;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.dropdownContent :global([data-slot="dropdown-menu-item"]):hover {
+  background: #f0f8f8;
+  color: #006a6a;
+}
+
+.dropdownContent :global([data-slot="dropdown-menu-item"]):focus {
+  background: #f0f8f8;
+  color: #006a6a;
+  outline: none;
+}
+
+.dropdownItem {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  text-align: left;
+}
+
 /* ── Mobile Menu ────────────────────────── */
 .mobileMenu {
   display: none;
@@ -191,6 +289,17 @@
   color: #006a6a;
 }
 
+.mobileDropdownBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .mobileCta {
   display: inline-flex;
   align-self: flex-start;
@@ -203,17 +312,55 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 11px 22px;
-  border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .mobileActions {
   display: flex;
   gap: 12px;
   justify-content: flex-start;
+}
+
+/* ── Mobile Submenu ─────────────────────── */
+.mobileLinkContainer {
+  display: flex;
+  align-items: center;
+}
+
+.mobileSubmenu {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 8px 16px;
+}
+
+.mobileSubmenuItem {
+  display: block;
+  padding: 8px 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.15s;
+}
+
+.mobileSubmenuItem:hover {
+  color: #006a6a;
+}
+
+.mobileSubmenuItemActive {
+  color: #006a6a;
+  font-weight: 600;
+  background: #f0f8f8;
+  padding: 8px 4px;
+  border-radius: 4px;
 }
 
 /* ── Responsive ─────────────────────────── */

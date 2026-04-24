@@ -8,12 +8,12 @@ import styles from "./NavThree.module.css";
 import { Button } from "@base-ui/react";
 
 const navLinks = [
-  { label: "Dashboard", href: "/" },
+  { label: "Home", href: "/" },
+  { label: "All Products", href: "/services" },
   { label: "IUL", href: "/indexed-universal-life" },
   { label: "EIA", href: "/equity-indexed-annuity" },
   { label: "LTC", href: "/long-term-care" },
   { label: "TLB", href: "/term-life-benefits" },
-  { label: "Expertise", href: "/services" },
 ];
 
 export default function NavThree() {

@@ -19,7 +19,7 @@ export default function HeroSection() {
           </h1>
 
           <p className={styles.body}>
-            Protect <strong>WHAT MATTERS MOST.</strong> Secure your health,
+            Protect <strong>WHAT MATTERS MOST. </strong> Secure your health,
             family, wealth, business, and assets to build a lasting legacy.
             You&rsquo;ve worked hard for what you have; we work hard to make
             sure you keep it.

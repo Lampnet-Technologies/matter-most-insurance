@@ -7,17 +7,17 @@ import styles from "./MainFooter.module.css";
 
 const solutionLinks = [
   {
-    label: "Indexed Universal Life",
+    label: "Indexed Universal Life (IUL)",
     href: "/indexed-universal-life",
   },
   {
-    label: "Equity Indexed Annuity",
+    label: "Equity Indexed Annuity (EIA)",
     href: "/equity-indexed-annuity",
   },
-  { label: "Long Term Care",
+  { label: "Long-Term Care (LTC) Insurance",
     href: "/long-term-care" },
   {
-    label: "Terminal Loss Benefit",
+    label: "Term Life Insurance with Living Benefits (TLLB)",
     href: "/term-life-benefits",
   },
 ];
