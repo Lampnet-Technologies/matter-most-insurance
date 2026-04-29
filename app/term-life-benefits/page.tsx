@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavThree from "@/components/navbars/NavThree";
+import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 
 import TLBHero from "@/components/tlb/TLBHero";
@@ -11,7 +11,7 @@ import TLBCoverageGrid from "@/components/tlb/TLBCoverageGrid";
 export default function TLBPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavThree />
+      <MainNav />
 
       <main
         id="main-content"

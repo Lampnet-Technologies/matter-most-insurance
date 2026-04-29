@@ -22,11 +22,18 @@ const solutionLinks = [
   },
 ];
 
-const companyLinks = [
+const otherLinks = [
   { label: "Hero Stories", href: "/hero-stories" },
   { label: "Safety Claims", href: "/claims" },
   { label: "Privacy Protocol", href: "/privacy" },
   { label: "Legal/Compliance", href: "/compliance" },
+];
+
+const companyLinks = [
+  { label: "Affiliate Program", href: "/affiliate" },
+  { label: "News", href: "/news" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Join Our Team", href: "/join-us" },
 ];
 
 export default function MainFooter() {
@@ -65,9 +72,9 @@ export default function MainFooter() {
             </div>
           </div>
 
-          {/* ── Col 2: Solutions ───────────────────── */}
+          {/* ── Col 2: Services ───────────────────── */}
           <div className={styles.linkCol}>
-            <h3 className={styles.colHeading}>Solutions</h3>
+            <h3 className={styles.colHeading}>Services</h3>
             <ul role="list" className={styles.linkList}>
               {solutionLinks.map((link) => (
                 <li key={link.label}>
@@ -79,11 +86,25 @@ export default function MainFooter() {
             </ul>
           </div>
 
-          {/* ── Col 3: Company ─────────────────────── */}
+           {/* ── Col 2: Company ───────────────────── */}
           <div className={styles.linkCol}>
             <h3 className={styles.colHeading}>Company</h3>
             <ul role="list" className={styles.linkList}>
               {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className={styles.footerLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Col 3: Other ─────────────────────── */}
+          <div className={styles.linkCol}>
+            <h3 className={styles.colHeading}>Others</h3>
+            <ul role="list" className={styles.linkList}>
+              {otherLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className={styles.footerLink}>
                     {link.label}

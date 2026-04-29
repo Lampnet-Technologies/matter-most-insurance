@@ -1,0 +1,65 @@
+@import "./about-tokens.css";
+
+.section {
+  background: var(--ab-surface);
+  padding: 48px 24px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Bordered card */
+.card {
+  border: 1px solid var(--ab-border-subtle);
+  border-radius: 8px;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+/* "Strategic Ecosystem" italic label */
+.label {
+  font-family: var(--ab-font-headline);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ab-text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Partner names row */
+.partners {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px 72px;
+}
+
+.partner {
+  font-family: var(--ab-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ab-surface-high);
+  /* Muted — they appear as greyed-out wordmarks in the design */
+  color: var(--ab-border);
+  transition: color 0.2s;
+  cursor: default;
+}
+
+.partner:hover {
+  color: var(--ab-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { padding: 0 20px 64px; }
+  .card { padding: 36px 24px; }
+  .partners { gap: 28px 40px; }
+}

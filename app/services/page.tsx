@@ -3,7 +3,7 @@ import ServicesLifeHealth from "@/components/services/ServicesLifeHealth";
 import ServicesRetirement from "@/components/services/ServicesRetirement";
 import ServicesLivingBenefits from "@/components/services/ServicesLivingBenefits";
 import ServicesSidebar from "@/components/services/ServicesSidebar";
-import NavThree from "@/components/navbars/NavThree";
+import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 import styles from "@/components/services/ServicesLayout.module.css";
 
@@ -13,7 +13,7 @@ export default function ServicesPage() {
       className="min-h-screen flex flex-col"
       style={{ backgroundColor: "#f7fafc" }}
     >
-      <NavThree />
+      <MainNav />
 
       <main className="w-full grow">
         <div className="max-w-screen-2xl mx-auto px-4 md:px-8">

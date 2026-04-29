@@ -5,12 +5,12 @@ import ComplianceProtectionLayers from "@/components/compliance/ComplianceProtec
 import CompliancePrivacy from "@/components/compliance/CompliancePrivacy";
 import ComplianceTotem from "@/components/compliance/ComplianceTotem";
 import MainFooter from "@/components/footers/MainFooter";
-import NavTwo from "@/components/navbars/NavTwo";
+import MainNav from "@/components/navbars/MainNav";
 
 export default function CompliancePage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavTwo />
+      <MainNav />
 
       <main id="main-content">
         <ComplianceHero />

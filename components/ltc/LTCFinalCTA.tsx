@@ -19,7 +19,7 @@ export default function LTCFinalCTA() {
           <Link href="/contact" className={styles.btnPrimary}>
             Protect My Legacy
           </Link>
-          <Link href="/contact#expert" className={styles.btnOutline}>
+          <Link href="#" className={styles.btnOutline}>
             Speak with an Expert
           </Link>
         </div>

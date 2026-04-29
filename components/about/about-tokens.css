@@ -1,0 +1,33 @@
+/*
+ * about-tokens.css — About Us page design tokens.
+ * Same brand system, page-scoped prefix.
+ */
+:root {
+  --ab-navy:            #041627;
+  --ab-teal:            #006a6a;
+  --ab-teal-dark:       #004f4f;
+  --ab-teal-on:         #006e6e;
+  --ab-gold-light:      #ffe088;
+  --ab-gold-on:         #241a00;
+  --ab-navy-container:  #1a2b3c;
+  --ab-navy-fixed:      #d2e4fb;
+
+  --ab-surface:         #f7fafc;
+  --ab-surface-low:     #f1f4f6;
+  --ab-surface-card:    #ffffff;
+  --ab-surface-high:    #e5e9eb;
+  --ab-surface-highest: #e0e3e5;
+
+  --ab-text-primary:    #181c1e;
+  --ab-text-muted:      #44474c;
+  --ab-text-nav:        #8192a7;
+
+  --ab-border:          #c4c6cd;
+  --ab-border-subtle:   rgba(196,198,205,0.2);
+
+  --ab-font-headline:   'Newsreader', Georgia, serif;
+  --ab-font-body:       'DM Sans', system-ui, sans-serif;
+
+  --ab-shadow-xl:       0 24px 48px rgba(4,22,39,0.12), 0 4px 12px rgba(4,22,39,0.06);
+  --ab-shadow-card:     0 2px 8px rgba(4,22,39,0.06), 0 1px 2px rgba(4,22,39,0.04);
+}

@@ -5,12 +5,12 @@ import AgentRevenue from "@/components/join-us/AgentRevenue";
 import AgentProcess from "@/components/join-us/AgentProcess";
 import AgentCTAForm from "@/components/join-us/AgentCTAForm";
 import MainFooter from "@/components/footers/MainFooter";
-import NavTwo from "@/components/navbars/NavTwo";
+import MainNav from "@/components/navbars/MainNav";
 
 export default function JoinUsPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavTwo />
+      <MainNav />
 
       <main id="main-content">
         <AgentHero />

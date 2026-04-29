@@ -1,0 +1,74 @@
+@import "./about-tokens.css";
+
+.section {
+  background: var(--ab-surface);
+  padding: 48px 24px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── 1:1 grid ───────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ── Left: image ────────────────────────────────── */
+.imageCol { }
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--ab-shadow-xl);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Right: content ─────────────────────────────── */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  font-family: var(--ab-font-headline);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--ab-navy);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.headingItalic {
+  font-style: italic;
+  color: var(--ab-teal);
+  font-weight: 400;
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: var(--ab-font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ab-text-muted);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { padding: 64px 20px; }
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}

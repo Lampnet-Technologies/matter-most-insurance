@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavThree from "@/components/navbars/NavThree";
+import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 
 import IULAdBanner from "@/components/iul/IULAdBanner";
@@ -14,7 +14,7 @@ import IULFinalCTA from "@/components/iul/IULFinalCTA";
 export default function IULPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavThree />
+      <MainNav />
 
       <main
         id="main-content"

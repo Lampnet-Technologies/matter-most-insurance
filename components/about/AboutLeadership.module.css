@@ -1,0 +1,106 @@
+@import "./about-tokens.css";
+
+.section {
+  background: var(--ab-surface);
+  padding: 48px 24px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Section header ─────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.heading {
+  font-family: var(--ab-font-headline);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--ab-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.subhead {
+  font-family: var(--ab-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ab-text-muted);
+  max-width: 520px;
+  text-align: center;
+}
+
+/* ── 4-col team grid ────────────────────────────── */
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* ── Individual team card ───────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+/* Photo — square with slight rounding, grayscale */
+.photoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--ab-surface-high);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(30%);
+  transition: filter 0.4s ease;
+}
+
+.card:hover .photo {
+  filter: grayscale(0%);
+}
+
+/* Name */
+.name {
+  font-family: var(--ab-font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ab-navy);
+  line-height: 1.15;
+}
+
+/* Role — teal tracked caps */
+.role {
+  font-family: var(--ab-font-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ab-teal);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .section { padding: 64px 20px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}

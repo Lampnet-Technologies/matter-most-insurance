@@ -3,13 +3,13 @@ import ContactHeroForm from "@/components/contact/ContactHeroForm";
 import ContactProtocol from "@/components/contact/ContactProtocol";
 import ContactAgentBanner from "@/components/contact/ContactAgentBanner";
 import MainFooter from "@/components/footers/MainFooter";
-import NavTwo from "@/components/navbars/NavTwo";
+import MainNav from "@/components/navbars/MainNav";
 
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavTwo />
+      <MainNav />
 
       <main id="main-content">
         <ContactHeroForm />

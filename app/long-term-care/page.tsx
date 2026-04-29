@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavThree from "@/components/navbars/NavThree";
+import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 
 import LTCHero from "@/components/ltc/LTCHero";
@@ -12,7 +12,7 @@ import LTCFinalCTA from "@/components/ltc/LTCFinalCTA";
 export default function LTCPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavThree />
+      <MainNav />
 
       <main id="main-content">
         <LTCHero />

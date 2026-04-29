@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavThree from "@/components/navbars/NavThree";
+import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 
 import EIAAdBanner from "@/components/eia/EIAAdBanner";
@@ -12,7 +12,7 @@ import EIAFinalCTA from "@/components/eia/EIAFinalCTA";
 export default function EIAPage() {
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
-      <NavThree />
+      <MainNav />
 
       <main id="main-content">
         <EIAAdBanner />

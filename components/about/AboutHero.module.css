@@ -1,0 +1,124 @@
+@import "./about-tokens.css";
+
+.section {
+  background: var(--ab-surface-low);
+  padding: 48px 24px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Left (55%) + Right (45%) ───────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: 480px;
+}
+
+/* ── Left ───────────────────────────────────────── */
+.leftCol {
+  position: relative;
+  padding: 64px 72px 64px 48px;
+  background: var(--ab-surface-low);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Ghost watermark — large, sits behind content */
+.watermark {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 220px;
+  height: 220px;
+  color: var(--ab-navy);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.copyContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 480px;
+}
+
+/* Headline */
+.headline {
+  font-family: var(--ab-font-headline);
+  font-size: clamp(44px, 6vw, 68px);
+  font-weight: 700;
+  color: var(--ab-navy);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.headlineItalic {
+  font-style: italic;
+  color: var(--ab-teal);
+  font-weight: 400;
+}
+
+/* Body */
+.body {
+  font-family: var(--ab-font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ab-text-muted);
+}
+
+/* Gold-bar pull-quote */
+.pullQuote {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+}
+
+.quoteBar {
+  flex-shrink: 0;
+  width: 4px;
+  height: 100%;
+  min-height: 36px;
+  background: var(--ab-gold-light);
+  border-radius: 2px;
+  display: block;
+}
+
+.quoteText {
+  font-family: var(--ab-font-headline);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--ab-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Right: photo ───────────────────────────────── */
+.rightCol {
+  position: relative;
+  min-height: 420px;
+}
+
+.imageFrame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .leftCol { padding: 48px 28px; }
+  .rightCol { min-height: 320px; position: relative; }
+  .imageFrame { position: relative; height: 320px; }
+}

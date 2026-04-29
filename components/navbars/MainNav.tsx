@@ -9,8 +9,8 @@ import { Button } from "@base-ui/react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products", hasDropdown: true },
-  { label: "Join Us", href: "/join-us" },
+  { label: "Protections", href: "/products", hasDropdown: true },
+  { label: "Company", href: "/company", hasDropdown: true },
   { label: "Affiliate", href: "/affiliate" },
   { label: "News", href: "/articles" },
   { label: "Contact", href: "/contact" },
@@ -26,12 +26,20 @@ const productOptions = [
   },
 ];
 
+const companyOptions = [
+  { label: "About Us", href: "/about" },
+  { label: "Join Our Team", href: "/join-us" },
+];
+
 export default function MainNav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
+  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
+  const productsDropdownRef = useRef<HTMLLIElement>(null);
+  const companyDropdownRef = useRef<HTMLLIElement>(null);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
@@ -51,6 +59,19 @@ export default function MainNav() {
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setProductsDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleCompanyMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setCompanyDropdownOpen(true);
+  };
+
+  const handleCompanyMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setCompanyDropdownOpen(false);
     }, 200);
   };
 
@@ -76,43 +97,59 @@ export default function MainNav() {
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             const isProductPath = pathname.startsWith("/products");
+            const isCompanyPath = pathname === "/about" || pathname === "/join-us";
 
             if (link.hasDropdown) {
+              const isProductsDropdown = link.label === "Protections";
+              const isCompanyDropdown = link.label === "Company";
+              const dropdownOpen = isProductsDropdown ? productsDropdownOpen : companyDropdownOpen;
+              const options = isProductsDropdown ? productOptions : companyOptions;
+              const dropdownRef = isProductsDropdown ? productsDropdownRef : companyDropdownRef;
+              const onMouseEnter = isProductsDropdown ? handleMouseEnter : handleCompanyMouseEnter;
+              const onMouseLeave = isProductsDropdown ? handleMouseLeave : handleCompanyMouseLeave;
+              const isPathActive = isProductsDropdown ? isProductPath : isCompanyPath;
+
               return (
                 <li
                   key={link.label}
                   className={styles.productDropdownContainer}
                   ref={dropdownRef}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
                 >
                   <button
-                    className={`${styles.link} ${isProductPath ? styles.linkActive : ""}`}
-                    aria-expanded={productsDropdownOpen}
+                    className={`${styles.link} ${isPathActive ? styles.linkActive : ""}`}
+                    aria-expanded={dropdownOpen}
                     aria-haspopup="true"
                   >
                     {/* Wrapped text in span for flexbox stability */}
                     <span>{link.label}</span>
                     <ChevronDown
                       size={16}
-                      className={`${styles.chevronIcon} ${productsDropdownOpen ? styles.chevronOpen : ""}`}
+                      className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ""}`}
                     />
-                    {isProductPath && (
+                    {isPathActive && (
                       <span className={styles.activeUnderline} />
                     )}
                   </button>
 
                   {/* Dropdown menu */}
-                  {productsDropdownOpen && (
+                  {dropdownOpen && (
                     <div className={styles.dropdownMenu}>
-                      {productOptions.map((option) => {
+                      {options.map((option) => {
                         const isOptionActive = pathname === option.href;
                         return (
                           <Link
                             key={option.label}
                             href={option.href}
                             className={`${styles.dropdownItem} ${isOptionActive ? styles.dropdownItemActive : ""}`}
-                            onClick={() => setProductsDropdownOpen(false)}
+                            onClick={() => {
+                              if (isProductsDropdown) {
+                                setProductsDropdownOpen(false);
+                              } else {
+                                setCompanyDropdownOpen(false);
+                              }
+                            }}
                           >
                             {option.label}
                           </Link>
@@ -140,15 +177,15 @@ export default function MainNav() {
 
         {/* Right actions */}
         <div className={styles.actions}>
-          <button
+         {/*  <button
             className={styles.bellBtn}
             aria-label="Notifications"
             title="Notifications"
           >
             <Bell size={18} />
-          </button>
-          <Link href="/services" className={styles.ctaBtn}>
-            Secure Plan
+          </button> */}
+          <Link href="#" className={styles.ctaBtn}>
+            Book A Consultation
           </Link>
 
           {/* Mobile hamburger */}
@@ -171,15 +208,21 @@ export default function MainNav() {
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const isProductPath = pathname.startsWith("/products");
+              const isCompanyPath = pathname === "/about" || pathname === "/join-us";
 
               if (link.hasDropdown) {
+                const isProductsDropdown = link.label === "Protections";
+                const mobileOpen_state = isProductsDropdown ? mobileProductsOpen : mobileCompanyOpen;
+                const setMobileOpen_state = isProductsDropdown ? setMobileProductsOpen : setMobileCompanyOpen;
+                const options = isProductsDropdown ? productOptions : companyOptions;
+                const isPathActive = isProductsDropdown ? isProductPath : isCompanyPath;
+
                 return (
                   <li key={link.label}>
                     <button
-                      onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                      // Added the new mobileDropdownBtn class
-                      className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${isProductPath ? styles.mobileLinkActive : ""}`}
-                      aria-expanded={mobileProductsOpen ? "true" : "false"}
+                      onClick={() => setMobileOpen_state(!mobileOpen_state)}
+                      className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${isPathActive ? styles.mobileLinkActive : ""}`}
+                      aria-expanded={mobileOpen_state ? "true" : "false"}
                       aria-haspopup="true"
                     >
                       {/* Wrapped text in span */}
@@ -187,12 +230,12 @@ export default function MainNav() {
                       {/* Reused existing CSS classes instead of inline styles */}
                       <ChevronDown
                         size={16}
-                        className={`${styles.chevronIcon} ${mobileProductsOpen ? styles.chevronOpen : ""}`}
+                        className={`${styles.chevronIcon} ${mobileOpen_state ? styles.chevronOpen : ""}`}
                       />
                     </button>
-                    {mobileProductsOpen && (
+                    {mobileOpen_state && (
                       <ul className={styles.mobileSubmenu}>
-                        {productOptions.map((option) => {
+                        {options.map((option) => {
                           const isOptionActive = pathname === option.href;
                           return (
                             <li key={option.label}>
@@ -200,7 +243,7 @@ export default function MainNav() {
                                 href={option.href}
                                 className={`${styles.mobileSubmenuItem} ${isOptionActive ? styles.mobileSubmenuItemActive : ""}`}
                                 onClick={() => {
-                                  setMobileProductsOpen(false);
+                                  setMobileOpen_state(false);
                                   setMobileOpen(false);
                                 }}
                               >
@@ -230,11 +273,11 @@ export default function MainNav() {
           </ul>
           <div className={styles.mobileActions}>
             <Link
-              href="/services"
+              href="#"
               className={styles.mobileCta}
               onClick={() => setMobileOpen(false)}
             >
-              Secure Plan
+              Book A Consultation
             </Link>
           </div>
         </div>
