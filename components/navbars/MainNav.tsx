@@ -29,6 +29,7 @@ const productOptions = [
 const companyOptions = [
   { label: "About Us", href: "/about" },
   { label: "Join Our Team", href: "/join-us" },
+  { label: "All Protection Plans", href: "/services" },
 ];
 
 export default function MainNav() {

@@ -6,7 +6,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -96,6 +96,7 @@
   font-style: italic;
   color: var(--ab-text-muted);
   line-height: 1.6;
+  margin: 6px;
 }
 
 /* ── Right: photo ───────────────────────────────── */

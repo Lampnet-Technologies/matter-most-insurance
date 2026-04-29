@@ -46,14 +46,6 @@ export default function AdBanner({
       className={`${styles.wrapper} ${className}`}
       aria-label="Advertisement"
     >
-      <button
-        className={styles.closeBtn}
-        aria-label="Close advertisement"
-        title="Close"
-        onClick={() => setIsClosed(true)}
-      >
-        <X size={18} />
-      </button>
      {/*  <p className={styles.label}>Sponsor Insight</p> */}
       <div className={styles.slot}>
         <Image
@@ -64,6 +56,14 @@ export default function AdBanner({
           priority={currentAdIndex === 0}
           sizes="(max-width: 768px) 100vw, 728px"
         />
+        <button
+          className={styles.closeBtn}
+          aria-label="Close advertisement"
+          title="Close"
+          onClick={() => setIsClosed(true)}
+        >
+          <X size={18} />
+        </button>
       </div>
     </div>
   );

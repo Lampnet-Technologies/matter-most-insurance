@@ -6,6 +6,8 @@ import ServicesSidebar from "@/components/services/ServicesSidebar";
 import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
 import styles from "@/components/services/ServicesLayout.module.css";
+import ServicesLivingBenefits2 from "@/components/services/ServicesLivingBenefits2";
+import ServicesBusinessContinuity from "@/components/services/ServicesBusinessContinuity";
 
 export default function ServicesPage() {
   return (
@@ -26,7 +28,9 @@ export default function ServicesPage() {
             <div className={styles.mainCol}>
               <ServicesLifeHealth />
               <ServicesRetirement />
-              <ServicesLivingBenefits />
+              <ServicesLivingBenefits2 />
+              <ServicesBusinessContinuity />
+             {/*  <ServicesLivingBenefits /> */}
             </div>
 
             <aside className={styles.sidebarCol}>

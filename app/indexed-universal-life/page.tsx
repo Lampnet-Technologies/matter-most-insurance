@@ -9,6 +9,7 @@ import IULFeatures from "@/components/iul/IULFeatures";
 import IULWealth from "@/components/iul/IULWealth";
 import IULStats from "@/components/iul/IULStats";
 import IULFinalCTA from "@/components/iul/IULFinalCTA";
+import IULStories from "@/components/iul/IULStories";
 
 
 export default function IULPage() {
@@ -25,6 +26,7 @@ export default function IULPage() {
         <IULFeatures />
         <IULWealth />
         <IULStats />
+        <IULStories />
         <IULFinalCTA />
       </main>
 

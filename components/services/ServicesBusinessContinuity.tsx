@@ -3,22 +3,21 @@ import { ArrowRight, Landmark, TrendingUp } from "lucide-react";
 import styles from "./ServicesRetirement.module.css";
 import Link from "next/link";
 
-export default function ServicesRetirement() {
+export default function ServicesBusinessContinuity() {
   return (
     <section
       className={styles.section}
-      aria-label="Retirement strategy services"
+      aria-label="Business continuity services"
     >
       <div className={styles.container}>
         {/* ── Content on top ────────────────────────── */}
         <div className={styles.content}>
-          <span className={styles.numberLabel}>02</span>
-          <h2 className={styles.heading}>Retirement Strategy</h2>
+          <span className={styles.numberLabel}>04</span>
+          <h2 className={styles.heading}>Business Continuity</h2>
           <p className={styles.description}>
-            Wealth preservation is an art form. We engineer retirement accounts
-            that minimize tax exposure while maximizing growth through
-            diversified, low-volatility vehicles designed for long-term
-            stability.
+            Protect the enterprise. From Key Person insurance to Buy-Sell
+            agreements, we secure the operational integrity of your business
+            against personnel risks.
           </p>
         </div>
 
@@ -29,10 +28,9 @@ export default function ServicesRetirement() {
               <Landmark size={24} />
             </div>
             <div className={styles.cardContent}>
-              <h4 className={styles.cardHeading}>Annuity Portfolios</h4>
+              <h4 className={styles.cardHeading}>Key Person Insurance</h4>
               <p className={styles.cardText}>
-                Guaranteed income streams built on institutional-grade
-                foundations.
+                Safeguard your business against the loss of critical personnel.
               </p>
             </div>
           </div>
@@ -42,15 +40,15 @@ export default function ServicesRetirement() {
               <TrendingUp size={24} />
             </div>
             <div className={styles.cardContent}>
-              <h4 className={styles.cardHeading}>Market Indexing</h4>
+              <h4 className={styles.cardHeading}>Buy-Sell Agreements</h4>
               <p className={styles.cardText}>
-                Capturing upside potential without the downside risk of standard
-                markets.
+                Create a structured plan for the orderly transfer of ownership
+                in the event of a key person&apos;s departure or death.
               </p>
             </div>
           </div>
         </div>
-        <Link href="/equity-indexed-annuity" className={styles.cta}>
+        <Link href="/long-term-care" className={styles.cta}>
           Explore Frameworks <ArrowRight size={16} />
         </Link>
       </div>

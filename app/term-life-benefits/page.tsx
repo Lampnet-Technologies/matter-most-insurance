@@ -2,6 +2,7 @@ import React from "react";
 
 import MainNav from "@/components/navbars/MainNav";
 import MainFooter from "@/components/footers/MainFooter";
+import AdBanner from "@/components/ui/AdBanner";
 
 import TLBHero from "@/components/tlb/TLBHero";
 import TLBStory from "@/components/tlb/TLBStory";
@@ -27,6 +28,9 @@ export default function TLBPage() {
         <TLBStory />
         <TLBHeroOptions />
         <TLBCoverageGrid />
+
+        {/* Bottom ad */}
+        <AdBanner placement="mid" />
       </main>
 
       <MainFooter />

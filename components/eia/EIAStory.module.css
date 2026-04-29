@@ -1,4 +1,4 @@
-@import "./tlb-tokens.css";
+@import "./eia-tokens.css";
 
 .section { background: var(--tlb-surface); padding: 0 32px 96px; }
 .container { max-width: 1200px; margin: 0 auto; }
@@ -124,6 +124,16 @@
   text-transform: uppercase;
   color: var(--tlb-text-muted);
   margin-top: 2px;
+}
+
+.conclusion {
+  font-family: var(--tlb-font-headline);
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 100;
+  font-style: italic;
+  color: var(--tlb-navy);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 /* ── Responsive ─────────────────────────────────── */

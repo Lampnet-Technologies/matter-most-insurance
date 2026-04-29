@@ -8,6 +8,7 @@ import LTCAdBanner from "@/components/ltc/LTCAdBanner";
 import LTCBenefits from "@/components/ltc/LTCBenefits";
 import LTCGapStrategy from "@/components/ltc/LTCGapStrategy";
 import LTCFinalCTA from "@/components/ltc/LTCFinalCTA";
+import LTCStories from "@/components/ltc/LTCStories";
 
 export default function LTCPage() {
   return (
@@ -19,6 +20,7 @@ export default function LTCPage() {
         <LTCAdBanner />
         <LTCBenefits />
         <LTCGapStrategy />
+        <LTCStories />
         <LTCFinalCTA />
       </main>
 

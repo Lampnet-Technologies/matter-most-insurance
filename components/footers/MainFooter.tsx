@@ -31,7 +31,7 @@ const otherLinks = [
 
 const companyLinks = [
   { label: "Affiliate Program", href: "/affiliate" },
-  { label: "News", href: "/news" },
+  { label: "News", href: "/articles" },
   { label: "Contact Us", href: "/contact" },
   { label: "Join Our Team", href: "/join-us" },
 ];

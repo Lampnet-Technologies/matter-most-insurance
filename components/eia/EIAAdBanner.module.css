@@ -2,32 +2,70 @@
 
 .wrapper {
   display: flex;
-  justify-content: center;
-  padding: 32px 32px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.wrapper.empty {
+  width: 728px;
+  max-width: 100%;
+  height: 90px;
+  padding: 0;
+  background: transparent;
+  gap: 0;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .slot {
   width: 728px;
   max-width: 100%;
   height: 90px;
-  background: var(--eia-surface-high);
-  border-left: 4px solid var(--eia-gold-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.label {
-  font-family: var(--eia-font-body);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--eia-text-muted);
+.slotText {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
 }
 
-@media (max-width: 900px) {
-  .wrapper {
-    padding: 24px 20px 0;
-  }
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.7);
 }

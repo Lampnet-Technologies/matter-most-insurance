@@ -8,6 +8,7 @@ import EIAHero from "@/components/eia/EIAHero";
 import EIAFeatures from "@/components/eia/EIAFeatures";
 import EIAPhilosophy from "@/components/eia/EIAPhilosophy";
 import EIAFinalCTA from "@/components/eia/EIAFinalCTA";
+import EIAStory from "@/components/eia/EIAStory";
 
 export default function EIAPage() {
   return (
@@ -18,6 +19,7 @@ export default function EIAPage() {
         <EIAAdBanner />
         <EIAHero />
         <EIAFeatures />
+        <EIAStory />
         <EIAPhilosophy />
         <EIAFinalCTA />
       </main>

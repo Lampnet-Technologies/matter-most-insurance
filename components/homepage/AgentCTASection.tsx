@@ -66,7 +66,7 @@ export default function AgentCTASection() {
             {/* ───── Right ──────────────────────── */}
         <div className={styles.imagePanel} aria-hidden="true">
           <Image
-            src="/Container%20(11).png"
+            src="/agentImage.png"
             alt="Insurance agent platform preview"
             fill
             sizes="fill"
