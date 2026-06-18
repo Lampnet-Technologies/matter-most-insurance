@@ -2,7 +2,7 @@
 
 .section {
   background: var(--svc-surface);
-  padding: 40px 80px;
+  padding: 80px 40px;
 }
 
 .container {

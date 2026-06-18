@@ -3,44 +3,77 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import styles from "./MainNav.module.css";
 import { Button } from "@base-ui/react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Protections", href: "/products", hasDropdown: true },
-  { label: "Company", href: "/company", hasDropdown: true },
-  { label: "Affiliate", href: "/affiliate" },
-  { label: "News", href: "/articles" },
-  { label: "Contact", href: "/contact" },
-];
-
-const productOptions = [
-  { label: "Indexed Universal Life (IUL)", href: "/indexed-universal-life" },
-  { label: "Equity Indexed Annuity (EIA)", href: "/equity-indexed-annuity" },
-  { label: "Long-Term Care Insurance (LTC)", href: "/long-term-care" },
-  {
-    label: "Term Life with Living Benefits (TLB)",
-    href: "/term-life-benefits",
-  },
+  { label: "Company", href: "/about", hasDropdown: true },
+  { label: "Providers", href: "/providers", hasDropdown: true },
+  { label: "Protections", href: "/services", hasDropdown: true },
+  { label: "Benefits", href: "/benefits", hasDropdown: true },
+  { label: "Lucrativeness", href: "/lucrativeness", hasDropdown: true },
+  { label: "Insights", href: "/support", hasDropdown: true },
 ];
 
 const companyOptions = [
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Join Our Team", href: "/join-us" },
-  { label: "All Protection Plans", href: "/services" },
+  { label: "Partners", href: "/providers" },
+  { label: "Join The Team", href: "/join-us" },
+  { label: "Contact", href: "/contact" },
 ];
+
+const providersOptions = [
+  { label: "Overview", href: "/providers" },
+  { label: "US", href: "/providers?region=us" },
+  { label: "Canada", href: "/providers?region=ca" },
+];
+
+const protectionsOptions = [
+  { label: "Overview", href: "/services" },
+  { label: "Indexed Universal Life (IUL)", href: "/indexed-universal-life" },
+  { label: "Equity Indexed Annuity (EIA)", href: "/equity-indexed-annuity" },
+  { label: "Long-Term Care (LTC) Insurance", href: "/long-term-care" },
+  { label: "Term Life Insurance with Living Benefits (TLB)", href: "/term-life-benefits" },
+];
+
+const benefitsOptions = [
+  { label: "Overview", href: "/benefits" },
+  { label: "EIA", href: "/benefits?tab=eia" },
+  { label: "IUL", href: "/benefits?tab=iul" },
+  { label: "LTC", href: "/benefits?tab=ltc" },
+  { label: "TLB", href: "/benefits?tab=tlb" },
+];
+
+const lucrativenessOptions = [
+  { label: "Overview", href: "/lucrativeness" },
+  { label: "IUL", href: "/lucrativeness?tab=iul" },
+  { label: "EIA", href: "/lucrativeness?tab=eia" },
+  { label: "LTC", href: "/lucrativeness?tab=ltc" },
+  { label: "TLB", href: "/lucrativeness?tab=tlb" },
+];
+
+const insightsOptions = [
+  { label: "Blogs", href: "/articles" },
+  { label: "FAQs", href: "/support" },
+  { label: "Chat with us", href: "/contact" },
+];
+
+const dropdownOptionsMap: Record<string, { label: string; href: string }[]> = {
+  Company: companyOptions,
+  Providers: providersOptions,
+  Protections: protectionsOptions,
+  Benefits: benefitsOptions,
+  Lucrativeness: lucrativenessOptions,
+  Insights: insightsOptions,
+};
 
 export default function MainNav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
-  const productsDropdownRef = useRef<HTMLLIElement>(null);
-  const companyDropdownRef = useRef<HTMLLIElement>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdownsOpen, setMobileDropdownsOpen] = useState<Record<string, boolean>>({});
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
@@ -50,30 +83,17 @@ export default function MainNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (label: string) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
-    setProductsDropdownOpen(true);
+    setActiveDropdown(label);
   };
 
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
-      setProductsDropdownOpen(false);
-    }, 200);
-  };
-
-  const handleCompanyMouseEnter = () => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-    }
-    setCompanyDropdownOpen(true);
-  };
-
-  const handleCompanyMouseLeave = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setCompanyDropdownOpen(false);
-    }, 200);
+      setActiveDropdown(null);
+    }, 150);
   };
 
   useEffect(() => {
@@ -83,6 +103,13 @@ export default function MainNav() {
       }
     };
   }, []);
+
+  const toggleMobileDropdown = (label: string) => {
+    setMobileDropdownsOpen((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
@@ -96,81 +123,52 @@ export default function MainNav() {
         {/* Desktop links */}
         <ul className={styles.links} role="list">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            const isProductPath = pathname.startsWith("/products");
-            const isCompanyPath = pathname === "/about" || pathname === "/join-us";
-
-            if (link.hasDropdown) {
-              const isProductsDropdown = link.label === "Protections";
-              const isCompanyDropdown = link.label === "Company";
-              const dropdownOpen = isProductsDropdown ? productsDropdownOpen : companyDropdownOpen;
-              const options = isProductsDropdown ? productOptions : companyOptions;
-              const dropdownRef = isProductsDropdown ? productsDropdownRef : companyDropdownRef;
-              const onMouseEnter = isProductsDropdown ? handleMouseEnter : handleCompanyMouseEnter;
-              const onMouseLeave = isProductsDropdown ? handleMouseLeave : handleCompanyMouseLeave;
-              const isPathActive = isProductsDropdown ? isProductPath : isCompanyPath;
-
-              return (
-                <li
-                  key={link.label}
-                  className={styles.productDropdownContainer}
-                  ref={dropdownRef}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                >
-                  <button
-                    className={`${styles.link} ${isPathActive ? styles.linkActive : ""}`}
-                    aria-expanded={dropdownOpen}
-                    aria-haspopup="true"
-                  >
-                    {/* Wrapped text in span for flexbox stability */}
-                    <span>{link.label}</span>
-                    <ChevronDown
-                      size={16}
-                      className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ""}`}
-                    />
-                    {isPathActive && (
-                      <span className={styles.activeUnderline} />
-                    )}
-                  </button>
-
-                  {/* Dropdown menu */}
-                  {dropdownOpen && (
-                    <div className={styles.dropdownMenu}>
-                      {options.map((option) => {
-                        const isOptionActive = pathname === option.href;
-                        return (
-                          <Link
-                            key={option.label}
-                            href={option.href}
-                            className={`${styles.dropdownItem} ${isOptionActive ? styles.dropdownItemActive : ""}`}
-                            onClick={() => {
-                              if (isProductsDropdown) {
-                                setProductsDropdownOpen(false);
-                              } else {
-                                setCompanyDropdownOpen(false);
-                              }
-                            }}
-                          >
-                            {option.label}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </li>
-              );
-            }
+            const dropdownOpen = activeDropdown === link.label;
+            const options = dropdownOptionsMap[link.label] || [];
+            
+            // Check if any of the dropdown items is active
+            const isPathActive = options.some((option) => pathname === option.href);
 
             return (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className={`${styles.link} ${isActive ? styles.linkActive : ""}`}
+              <li
+                key={link.label}
+                className={styles.productDropdownContainer}
+                onMouseEnter={() => handleMouseEnter(link.label)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`${styles.link} ${isPathActive ? styles.linkActive : ""}`}
+                  aria-expanded={dropdownOpen}
+                  aria-haspopup="true"
                 >
-                  {link.label}
-                  {isActive && <span className={styles.activeUnderline} />}
-                </Link>
+                  <span>{link.label}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ""}`}
+                  />
+                  {isPathActive && (
+                    <span className={styles.activeUnderline} />
+                  )}
+                </button>
+
+                {/* Dropdown menu */}
+                {dropdownOpen && (
+                  <div className={styles.dropdownMenu}>
+                    {options.map((option) => {
+                      const isOptionActive = pathname === option.href;
+                      return (
+                        <Link
+                          key={option.label}
+                          href={option.href}
+                          className={`${styles.dropdownItem} ${isOptionActive ? styles.dropdownItemActive : ""}`}
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          {option.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </li>
             );
           })}
@@ -178,15 +176,8 @@ export default function MainNav() {
 
         {/* Right actions */}
         <div className={styles.actions}>
-         {/*  <button
-            className={styles.bellBtn}
-            aria-label="Notifications"
-            title="Notifications"
-          >
-            <Bell size={18} />
-          </button> */}
-          <Link href="#" className={styles.ctaBtn}>
-            Book A Consultation
+          <Link href="/contact" className={styles.ctaBtn}>
+            GET CONSULTATION
           </Link>
 
           {/* Mobile hamburger */}
@@ -207,78 +198,56 @@ export default function MainNav() {
         <div className={styles.mobileMenu} aria-label="Mobile navigation">
           <ul role="list">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              const isProductPath = pathname.startsWith("/products");
-              const isCompanyPath = pathname === "/about" || pathname === "/join-us";
-
-              if (link.hasDropdown) {
-                const isProductsDropdown = link.label === "Protections";
-                const mobileOpen_state = isProductsDropdown ? mobileProductsOpen : mobileCompanyOpen;
-                const setMobileOpen_state = isProductsDropdown ? setMobileProductsOpen : setMobileCompanyOpen;
-                const options = isProductsDropdown ? productOptions : companyOptions;
-                const isPathActive = isProductsDropdown ? isProductPath : isCompanyPath;
-
-                return (
-                  <li key={link.label}>
-                    <button
-                      onClick={() => setMobileOpen_state(!mobileOpen_state)}
-                      className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${isPathActive ? styles.mobileLinkActive : ""}`}
-                      aria-expanded={mobileOpen_state ? "true" : "false"}
-                      aria-haspopup="true"
-                    >
-                      {/* Wrapped text in span */}
-                      <span>{link.label}</span>
-                      {/* Reused existing CSS classes instead of inline styles */}
-                      <ChevronDown
-                        size={16}
-                        className={`${styles.chevronIcon} ${mobileOpen_state ? styles.chevronOpen : ""}`}
-                      />
-                    </button>
-                    {mobileOpen_state && (
-                      <ul className={styles.mobileSubmenu}>
-                        {options.map((option) => {
-                          const isOptionActive = pathname === option.href;
-                          return (
-                            <li key={option.label}>
-                              <Link
-                                href={option.href}
-                                className={`${styles.mobileSubmenuItem} ${isOptionActive ? styles.mobileSubmenuItemActive : ""}`}
-                                onClick={() => {
-                                  setMobileOpen_state(false);
-                                  setMobileOpen(false);
-                                }}
-                              >
-                                {option.label}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                  </li>
-                );
-              }
+              const mobileOpenState = !!mobileDropdownsOpen[link.label];
+              const options = dropdownOptionsMap[link.label] || [];
+              const isPathActive = options.some((option) => pathname === option.href);
 
               return (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className={`${styles.mobileLink} ${isActive ? styles.mobileLinkActive : ""}`}
-                    onClick={() => setMobileOpen(false)}
+                  <button
+                    onClick={() => toggleMobileDropdown(link.label)}
+                    className={`${styles.mobileLink} ${styles.mobileDropdownBtn} ${isPathActive ? styles.mobileLinkActive : ""}`}
+                    aria-expanded={mobileOpenState ? "true" : "false"}
+                    aria-haspopup="true"
                   >
-                    {link.label}
-                  </Link>
+                    <span>{link.label}</span>
+                    <ChevronDown
+                      size={16}
+                      className={`${styles.chevronIcon} ${mobileOpenState ? styles.chevronOpen : ""}`}
+                    />
+                  </button>
+                  {mobileOpenState && (
+                    <ul className={styles.mobileSubmenu}>
+                      {options.map((option) => {
+                        const isOptionActive = pathname === option.href;
+                        return (
+                          <li key={option.label}>
+                            <Link
+                              href={option.href}
+                              className={`${styles.mobileSubmenuItem} ${isOptionActive ? styles.mobileSubmenuItemActive : ""}`}
+                              onClick={() => {
+                                setMobileDropdownsOpen((prev) => ({ ...prev, [link.label]: false }));
+                                setMobileOpen(false);
+                              }}
+                            >
+                              {option.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
                 </li>
               );
             })}
           </ul>
           <div className={styles.mobileActions}>
             <Link
-              href="#"
+              href="/contact"
               className={styles.mobileCta}
               onClick={() => setMobileOpen(false)}
             >
-              Book A Consultation
+              GET CONSULTATION
             </Link>
           </div>
         </div>

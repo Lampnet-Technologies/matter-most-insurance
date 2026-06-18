@@ -124,24 +124,21 @@
 .btnPrimary {
   display: inline-flex;
   align-items: center;
-  background: #0f4d32;
+  background: #006A6A;
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 12.5px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
   letter-spacing: 0.04em;
   text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 10px;
+  padding: 12.5px 32px;
+  border-radius: 6px;
   border: 1px solid transparent;
   transition:    background 0.2s,    transform 0.15s;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .btnPrimary:hover {
-  background: #0b3f28;
+  background: #004d4d;
   transform: translateY(-1px);
 }
 
@@ -151,18 +148,15 @@
   background: #041627;
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
   letter-spacing: 0.04em;
   text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 10px;
-  border: 1px solid #aaacb080;
+  padding: 12px 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition:    background 0.2s,    border-color 0.2s;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .btnOutline:hover {
   background: #0a2a44;
@@ -248,14 +242,25 @@
   font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: #0f4d32;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #006A6A;
   transition: color 0.15s;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
 }
 .missionLink:hover {
-  color: #63c764;
+  color: #004d4d;
+}
+
+.linkSquare {
+  width: 8.75px;
+  height: 8.75px;
+  background: #006A6A;
+  display: inline-block;
 }
 
 /* ── Responsive ─────────────────────────────────── */

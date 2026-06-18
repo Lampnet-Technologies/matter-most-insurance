@@ -1,0 +1,179 @@
+.section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* ── Hero Banner ────────────────────────── */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/join-us-heroimage.png");
+  background-size: cover;
+  background-position: center;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.heroTitle {
+  font-family: "Newsreader", serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 4px;
+}
+
+/* ── Content Layout ─────────────────────── */
+.container {
+  max-width: var(--container, 1200px);
+  margin: 0 auto;
+  padding: 80px 40px;
+  width: 100%;
+}
+
+.heading {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 48px;
+  letter-spacing: -0.02em;
+}
+
+.faqLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ── Questions List (Left) ──────────────── */
+.questionsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqBtn {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #EFF3F6;
+  padding: 20px 8px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 16px;
+}
+
+.faqBtn:hover {
+  background: rgba(239, 243, 246, 0.3);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #BCC8D4;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.dotActive {
+  background: #006A6A;
+}
+
+.questionText {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #44474C;
+  flex: 1;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.faqBtnActive .questionText {
+  color: #041627;
+}
+
+.chevron {
+  color: #BCC8D4;
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.chevronActive {
+  color: #006A6A;
+  transform: translateX(2px);
+}
+
+/* ── Answer Card (Right) ────────────────── */
+.answerCard {
+  background: #F7F9FB;
+  border-radius: 8px;
+  padding: 48px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.02);
+  outline: 1px solid rgba(196, 198, 205, 0.1);
+  outline-offset: -1px;
+}
+
+.answerTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #041627;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.answerText {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #44474C;
+  letter-spacing: 0.2px;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 900px) {
+  .container {
+    padding: 48px 20px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .faqLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .answerCard {
+    padding: 32px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 16px;
+  }
+  .answerCard {
+    padding: 20px;
+  }
+}

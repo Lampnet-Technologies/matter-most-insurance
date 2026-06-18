@@ -13,11 +13,10 @@ export default function ServicesBusinessContinuity() {
         {/* ── Content on top ────────────────────────── */}
         <div className={styles.content}>
           <span className={styles.numberLabel}>04</span>
-          <h2 className={styles.heading}>Business Continuity</h2>
+          <h2 className={styles.heading}>Term Life Insurance with Living Benefits(TLB)</h2>
           <p className={styles.description}>
-            Protect the enterprise. From Key Person insurance to Buy-Sell
-            agreements, we secure the operational integrity of your business
-            against personnel risks.
+            Insurance policy that provides a guaranteed death benefit to your
+            beneficiaries — PLUS living benefits.
           </p>
         </div>
 
@@ -28,9 +27,10 @@ export default function ServicesBusinessContinuity() {
               <Landmark size={24} />
             </div>
             <div className={styles.cardContent}>
-              <h4 className={styles.cardHeading}>Key Person Insurance</h4>
+              <h4 className={styles.cardHeading}>Terminal Illness Coverage</h4>
               <p className={styles.cardText}>
-                Safeguard your business against the loss of critical personnel.
+                Guaranteed income streams built on institutional-grade
+                foundations.
               </p>
             </div>
           </div>
@@ -40,15 +40,15 @@ export default function ServicesBusinessContinuity() {
               <TrendingUp size={24} />
             </div>
             <div className={styles.cardContent}>
-              <h4 className={styles.cardHeading}>Buy-Sell Agreements</h4>
+              <h4 className={styles.cardHeading}>Critical Illness Coverage</h4>
               <p className={styles.cardText}>
-                Create a structured plan for the orderly transfer of ownership
-                in the event of a key person&apos;s departure or death.
+                Capturing upside potential without the downside risk of standard
+                markets.
               </p>
             </div>
           </div>
         </div>
-        <Link href="/long-term-care" className={styles.cta}>
+        <Link href="/term-life-benefits" className={styles.cta}>
           Explore Frameworks <ArrowRight size={16} />
         </Link>
       </div>

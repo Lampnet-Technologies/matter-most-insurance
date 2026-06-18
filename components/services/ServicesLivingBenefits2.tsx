@@ -24,13 +24,13 @@ export default function ServicesLivingBenefits2() {
         {/* ── Content below image ────────────────────── */}
         <div className={styles.content}>
           <span className={styles.numberLabel}>03</span>
-          <h2 className={styles.heading}>Living Benefits</h2>
+          <h2 className={styles.heading}>Long-Term Care(LTC)</h2>
           <p className={styles.description}>
             Access your policy values while you&apos;re alive. Critical,
             chronic, and terminal illness riders ensure your protection acts as
             a resource during times of need.
           </p>
-          <Link href="/term-life-benefits" className={styles.cta}>
+          <Link href="/long-term-care" className={styles.cta}>
             Explore Frameworks <ArrowRight size={16} />
           </Link>
         </div>

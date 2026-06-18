@@ -24,7 +24,7 @@ export default function ServicesLifeHealth() {
         {/* ── Content below image ────────────────────── */}
         <div className={styles.content}>
           <span className={styles.numberLabel}>01</span>
-          <h2 className={styles.heading}>Life & Health</h2>
+          <h2 className={styles.heading}>Indexed Universal Life(IUL)</h2>
           <p className={styles.description}>
             Comprehensive coverage that adapts to the lifecycle of your family
             and career. We provide a safety net that doesn&apos;t just catch

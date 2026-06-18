@@ -58,8 +58,8 @@
 .card {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
-  gap: 26px;
+  flex-direction: row;
+  gap: 20px;
   background: var(--svc-surface-lowest);
   padding: 24px;
 }
@@ -79,7 +79,7 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .cardHeading {

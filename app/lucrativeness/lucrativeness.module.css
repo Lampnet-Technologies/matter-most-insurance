@@ -1,0 +1,612 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f4f6;
+}
+
+/* ── Hero Banner ── */
+.hero {
+  position: relative;
+  background-color: #041627;
+  background-image:
+    linear-gradient(rgba(4, 22, 39, 0.4), rgba(4, 22, 39, 0.6)),
+    url("/join-us-heroimage.png");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 40px 100px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroPre {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #93f2f2;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.heroTitle {
+  font-family: "Newsreader", serif;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.heroSub {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(15px, 2.5vw, 18px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  max-width: 600px;
+}
+
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #006a6a;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.heroBtn:hover {
+  background-color: #004d4d;
+}
+
+/* ── Main Container ── */
+.main {
+  flex-grow: 1;
+  padding-bottom: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── What Makes It Lucrative Section (Intro) ── */
+.introSection {
+  padding: 80px 0;
+  margin-bottom: 60px;
+}
+
+.introGrid {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.introLeft {
+  width: 394px;
+  align-self: stretch;
+  padding: 48px 48px 130px;
+  background-color: #f1f4f6;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.introLeftTitle {
+  font-family: "Newsreader", serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 32px;
+  color: #006a6a;
+}
+
+.introLeftDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #44474c;
+}
+
+.introRight {
+  width: 790px;
+  align-self: stretch;
+  padding: 42px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  outline: 1px rgba(196, 198, 205, 0.1) solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 48px;
+  flex-grow: 1;
+}
+
+.introRightContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.introRightTitle {
+  font-family: "Newsreader", serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #181c1e;
+  margin: 0;
+}
+
+.introRightDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #44474c;
+  margin: 0;
+}
+
+.introRightCardsGrid {
+  width: 236px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.introSubCard {
+  width: 114px;
+  height: 96px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.introSubCardText {
+  font-family: "Newsreader", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000;
+  z-index: 2;
+}
+
+.cardWealthGrowth {
+  background-color: #e5e9eb;
+}
+
+.cardTaxAdvantages {
+  background-color: rgba(0, 106, 106, 0.2);
+}
+
+.cardLivingBenefits {
+  background-color: rgba(4, 22, 39, 0.1);
+}
+
+.cardLegacyProtection {
+  background-color: #f1f4f6;
+}
+
+/* ── Tabs Navigation ── */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(4, 22, 39, 0.05);
+  margin-bottom: 60px;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  padding: 16px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.tabBtnActive {
+  color: #006a6a;
+  border-bottom: 3px solid #006a6a;
+}
+
+/* ── Tab Content Sections ── */
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ── Split Grid Layout ── */
+.splitSection {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ── Background Section (Section 2 & Section 4) ── */
+.bgSection {
+  background-color: #f1f4f695;
+  padding: 60px 48px;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 60px;
+  align-items: start;
+  border-radius: 8px;
+}
+
+.splitLeft {
+  font-family: "Newsreader", serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #041627;
+}
+
+.splitRight {
+  width: 100%;
+}
+
+/* ── Cards Layouts (Section 1) ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cardsGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lucrativeCard {
+  background-color: #e2ecf0;
+  padding: 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #041627;
+  margin: 0;
+}
+
+.cardDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #44474c;
+  margin: 0;
+}
+
+/* ── Qualify Lists Layout (Section 2) ── */
+.qualifyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.qualifyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.qualifyCol:not(:first-child) {
+  border-left: 1.5px solid #d2caca;
+  padding-left: 24px;
+}
+
+.qualifyColTitle {
+  font-family: "Newsreader", serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.qualifyColDesc {
+  font-family: "Newsreader", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0;
+}
+
+.qualifyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qualifyItem {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #44474c;
+  position: relative;
+  padding-left: 14px;
+}
+
+.qualifyItem::before {
+  content: "•";
+  color: #006a6a;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ── Accordion List (Section 3) ── */
+.accordionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-top: 40px;
+}
+
+.accordionHeading {
+  font-family: "Newsreader", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #041627;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.accordionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.accordionItem {
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(196, 198, 205, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.accordionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordionTitleText {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #041627;
+}
+
+.accordionIcon {
+  color: #006a6a;
+  transition: transform 0.2s ease;
+}
+
+.accordionOpen .accordionIcon {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  padding: 0 24px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #44474c;
+}
+
+/* ── Rows List (Section 4) ── */
+.rowsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: none;
+}
+
+.rowItem {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 40px;
+  padding: 30px 0;
+  border-bottom: 1.5px solid #d2caca;
+}
+
+.rowItem:last-child {
+  border-bottom: none;
+}
+
+.rowTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #041627;
+  margin: 0;
+}
+
+.rowDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #44474c;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .introGrid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .introLeft,
+  .introRight {
+    width: 100% !important;
+    padding: 32px !important;
+  }
+
+  .introRight {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .introRightCardsGrid {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .introLeft,
+  .introRight {
+    padding: 20px !important;
+  }
+
+  .introRight {
+    gap: 20px;
+  }
+
+  .introRightTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .introRightDesc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .introRightCardsGrid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .introLeft,
+  .introRight {
+    padding: 16px !important;
+  }
+
+  .introLeftTitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .introLeftDesc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .introRight {
+    gap: 16px;
+  }
+
+  .introRightTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .introRightDesc {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .splitSection,
+  .bgSection,
+  .rowItem {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .introCards,
+  .cardsGrid,
+  .cardsGrid3,
+  .qualifyGrid,
+  .accordionGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .introLeft,
+  .introRight {
+    padding: 14px !important;
+  }
+
+  .bgSection {
+    padding: 40px 20px !important;
+  }
+
+  .introCards,
+  .cardsGrid,
+  .cardsGrid3,
+  .qualifyGrid,
+  .accordionGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero {
+    padding: 100px 20px 80px;
+  }
+}

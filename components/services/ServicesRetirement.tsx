@@ -13,7 +13,7 @@ export default function ServicesRetirement() {
         {/* ── Content on top ────────────────────────── */}
         <div className={styles.content}>
           <span className={styles.numberLabel}>02</span>
-          <h2 className={styles.heading}>Retirement Strategy</h2>
+          <h2 className={styles.heading}>Equity Indexed Annuity(EIA)</h2>
           <p className={styles.description}>
             Wealth preservation is an art form. We engineer retirement accounts
             that minimize tax exposure while maximizing growth through

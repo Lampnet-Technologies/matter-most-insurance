@@ -22,12 +22,12 @@ const solutionLinks = [
   },
 ];
 
-const otherLinks = [
+/* const otherLinks = [
   { label: "Hero Stories", href: "/hero-stories" },
   { label: "Safety Claims", href: "/claims" },
   { label: "Privacy Protocol", href: "/privacy" },
   { label: "Legal/Compliance", href: "/compliance" },
-];
+]; */
 
 const companyLinks = [
   { label: "Affiliate Program", href: "/affiliate" },
@@ -101,7 +101,7 @@ export default function MainFooter() {
           </div>
 
           {/* ── Col 3: Other ─────────────────────── */}
-          <div className={styles.linkCol}>
+        {/*   <div className={styles.linkCol}>
             <h3 className={styles.colHeading}>Others</h3>
             <ul role="list" className={styles.linkList}>
               {otherLinks.map((link) => (
@@ -112,7 +112,7 @@ export default function MainFooter() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* ── Col 4: Email signup ────────────────── */}
           <div className={styles.signupCol}>

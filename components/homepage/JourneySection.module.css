@@ -243,3 +243,29 @@
     gap: 36px;
   }
 }
+
+.action {
+  margin-top: 24px;
+  display: flex;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #006A6A;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-decoration: none;
+  padding: 12.5px 32px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btnPrimary:hover {
+  background: #004D4D;
+  transform: translateY(-1px);
+}

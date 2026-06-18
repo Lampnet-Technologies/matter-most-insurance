@@ -11,7 +11,7 @@ import TLBCoverageGrid from "@/components/tlb/TLBCoverageGrid";
 
 export default function TLBPage() {
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
       <main
@@ -25,8 +25,8 @@ export default function TLBPage() {
         }}
       >
         <TLBHero />
-        <TLBStory />
         <TLBHeroOptions />
+        <TLBStory />
         <TLBCoverageGrid />
 
         {/* Bottom ad */}

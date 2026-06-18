@@ -1,0 +1,252 @@
+.section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* ── Hero Banner ────────────────────────── */
+.hero {
+  background-image: linear-gradient(rgba(4, 22, 39, 0.8), rgba(4, 22, 39, 0.85)), url("/join-us-heroimage.png");
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: var(--container, 1280px);
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.heroPre {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #93F2F2;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-family: "Newsreader", serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.heroSub {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #B7C8DE;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #006A6A;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12.5px 32px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.heroBtn:hover {
+  background: #004D4D;
+  transform: translateY(-1px);
+}
+
+/* ── Content Layout ─────────────────────── */
+.container {
+  max-width: var(--container, 1280px);
+  margin: 0 auto;
+  padding: 60px 40px;
+  width: 100%;
+}
+
+/* ── Tabs ───────────────────────────────── */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid #EFF3F6;
+  padding-bottom: 16px;
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  color: #74777D;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.tabBtn:hover {
+  color: #041627;
+  background-color: #F7F9FB;
+}
+
+.tabBtnActive {
+  background-color: #006A6A !important;
+  color: #ffffff !important;
+}
+
+/* ── Partners Grid ──────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+  outline: 0.4px solid #D5D4D4;
+  outline-offset: -0.4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.partnerName {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #74777D;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ── Pagination ─────────────────────────── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.pageBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background: #EFF3F6;
+  color: #041627;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pageBtnActive {
+  background: transparent;
+  color: #041627;
+  font-weight: 700;
+  cursor: default;
+}
+
+.pageBtn:hover:not(.pageBtnActive) {
+  background: #DCE3E8;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 990px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .heroTitle {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .hero {
+    height: 340px;
+  }
+  .heroContent {
+    padding: 0 20px;
+  }
+  .tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+  .tabBtn {
+    padding: 6px 16px;
+    font-size: 13px;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

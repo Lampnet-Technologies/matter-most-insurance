@@ -7,7 +7,7 @@ import AdBanner from "@/components/ui/AdBanner";
 
 export default function AffiliatePage() {
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
       {/* Top sponsor banner */}

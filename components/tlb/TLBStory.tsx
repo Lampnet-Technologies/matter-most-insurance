@@ -26,7 +26,7 @@ export default function TLBStory() {
           <div className={styles.contentCol}>
             <div className={styles.eyebrowRow}>
               <Star />
-              <span className={styles.eyebrow}>Client Success Story</span>
+              <span className={styles.eyebrow}>Real Hero Story</span>
             </div>
 
             <h2 className={styles.heading}>

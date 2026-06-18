@@ -1,8 +1,15 @@
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import { Shield, Wallet, Activity, FileSignature } from "lucide-react";
+import Image from "next/image";
+import { Shield, Wallet, Activity, FileSignature, X } from "lucide-react";
 import styles from "./ServicesSidebar.module.css";
 
 export default function ServicesSidebar() {
+  const [showAd1, setShowAd1] = useState(true);
+  const [showAd2, setShowAd2] = useState(true);
+
   return (
     <div className={styles.outerWrapper}>
       {/* Dark sticky card */}
@@ -37,10 +44,76 @@ export default function ServicesSidebar() {
           ))}
         </div>
 
-        {/* Ad placeholder inside the dark card, at the bottom */}
-        <div className={styles.adPlaceholder}>
-          <span className={styles.adText}>Medium Rectangle 300×250</span>
+        {/* IUL Retirement Example Section */}
+        <div className={styles.retirementExampleSection}>
+          <h3 className={styles.retirementHeading}>IUL Retirement Example</h3>
+          <p className={styles.retirementDescription}>
+            Here&apos;s How A 35-Year-Old Man Retiring At Age 70 Could Use IUL To Retire Like A Hero
+          </p>
+          <div className={styles.retirementImageWrapper}>
+            <Image
+              src="/retirement-example.png"
+              alt="IUL Retirement Example Chart"
+              width={300}
+              height={180}
+              className={styles.retirementImage}
+            />
+          </div>
         </div>
+
+        {/* 
+          ======================================================================
+          ADVERTISEMENT BANNERS
+          The client may or may not want these ad units. 
+          To hide them, you can simply select and comment out the blocks below.
+          ======================================================================
+        */}
+
+        {/* BEGIN: Optional Ad Banner 1 (Medium Rectangle 300x250) */}
+        {showAd1 && (
+          <div className={styles.adCard}>
+            <button
+              type="button"
+              className={styles.closeBtn}
+              onClick={() => setShowAd1(false)}
+              aria-label="Close ad"
+            >
+              <X size={14} />
+            </button>
+            <Image
+              src="/ads1.png"
+              alt="Advertisement 1"
+              width={300}
+              height={250}
+              className={styles.adImage}
+            />
+            <div className={styles.adTag}>Advertisement</div>
+          </div>
+        )}
+        {/* END: Optional Ad Banner 1 */}
+
+        {/* BEGIN: Optional Ad Banner 2 (Medium Rectangle 300x250) */}
+        {showAd2 && (
+          <div className={styles.adCard}>
+            <button
+              type="button"
+              className={styles.closeBtn}
+              onClick={() => setShowAd2(false)}
+              aria-label="Close ad"
+            >
+              <X size={14} />
+            </button>
+            <Image
+              src="/ads2.png"
+              alt="Advertisement 2"
+              width={300}
+              height={250}
+              className={styles.adImage}
+            />
+            <div className={styles.adTag}>Advertisement</div>
+          </div>
+        )}
+        {/* END: Optional Ad Banner 2 */}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import LTCStories from "@/components/ltc/LTCStories";
 
 export default function LTCPage() {
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
       <main id="main-content">

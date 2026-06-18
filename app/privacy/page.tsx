@@ -5,7 +5,7 @@ import MainFooter from "@/components/footers/MainFooter";
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
       <main id="main-content">

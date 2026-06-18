@@ -8,10 +8,9 @@ export default function ServicesHero() {
         <div className={styles.grid}>
           {/* ── Left: headline block (8 cols) ──────── */}
           <div className={styles.headlineCol}>
-            <span className={styles.eyebrow}>Comprehensive Protection</span>
             <h1 className={styles.headline}>
               The Architecture of <br />
-              <em className={styles.headlineItalic}>Protective Frameworks</em>
+              <em className={styles.headlineItalic}>Protective</em> Frameworks
             </h1>
             <p className={styles.subhead}>
               Our approach to risk is sculptural—defining boundaries, fortifying

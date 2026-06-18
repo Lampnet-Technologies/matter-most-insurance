@@ -1,33 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Play } from "lucide-react";
 import styles from "./JourneySection.module.css";
 
 const steps = [
   {
     number: 1,
-    title: "The Call to Action",
+    title: "Indexed Universal Life",
     description:
-      "Submit your basic details to start your custom plan generation.",
+      "Good Health Safety And Deadly illnesses & Diseases Care Protection",
   },
   {
     number: 2,
-    title: "Meet Your Mentor",
+    title: "Long-term Care",
     description:
-      "Connect with a dedicated specialist who understands your unique goals.",
+      "Long-term care insurance can fill coverage gaps, short-term skilled care in a nursing home after a hospital stay (up to 100 days)",
   },
   {
     number: 3,
-    title: "The Secret Map",
+    title: "Equity Indexed Annuity",
     description:
-      "Receive a comprehensive, structured roadmap for your financial safety.",
+      "For purchasing an annuity you can receive an up front bonus of up to 26% on your money",
   },
   {
     number: 4,
-    title: "Becoming the Hero",
+    title: "Term Life Insurance with Living Benefits",
     description:
-      "Execute the plan and rest easy knowing your legacy is bulletproof.",
+      "Find plans with rates that are 20-30% lower than standard coverage options.",
   },
 ];
 
@@ -35,16 +36,15 @@ export default function JourneySection() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <section className={styles.section} aria-label="Your Heroic Journey">
+    <section className={styles.section} aria-label="What You Get">
       <div className={styles.container}>
         {/* ── Left: Steps ──────────────── */}
         <div className={styles.content}>
           <h2 className={styles.heading}>
-            Your Heroic Journey in 4 Simple Steps
+            What you will get when you buy a plan
           </h2>
           <p className={styles.subheading}>
-            We&apos;ve mapped out the path to total protection. It&apos;s simpler than you
-            think.
+            We&apos;ve mapped out the path to total protection. It&apos;s simpler than you think.
           </p>
 
           <ol className={styles.steps}>
@@ -63,6 +63,12 @@ export default function JourneySection() {
               </li>
             ))}
           </ol>
+
+          <div className={styles.action}>
+            <Link href="/services" className={styles.btnPrimary}>
+              Claim License
+            </Link>
+          </div>
         </div>
 
         {/* ── Right: Video player ───────── */}

@@ -58,8 +58,8 @@
 /* ── Plan cards ───────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   list-style: none;
 }
 
@@ -77,10 +77,6 @@
   flex-direction: column;
   gap: 8px;
   transition:    box-shadow 0.2s,    transform 0.2s;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 .card:hover {
   box-shadow: var(--shadow-md);
@@ -145,7 +141,7 @@
 }
 
 .featureCheck {
-  color: #0f4d32;
+  color: #006A6A;
   flex-shrink: 0;
   margin: 0;
 }
@@ -155,17 +151,17 @@
   align-self: flex-start;
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: rgb(44, 198, 147);
+  color: #006A6A;
   margin-top: 12px;
   margin-bottom: 12px;
   transition: gap 0.15s;
   text-decoration: none;
 }
 .configLink:hover {
-  color: rgb(14, 120, 85);
+  color: #004D4D;
 }
  
 /* ── Responsive ──────────────────────── */

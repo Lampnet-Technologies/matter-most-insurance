@@ -8,7 +8,7 @@ import MainNav from "@/components/navbars/MainNav";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: "#f7fafc" }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f7fafc" }}>
       <MainNav />
 
       <main id="main-content">

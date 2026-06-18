@@ -7,28 +7,32 @@ import Image from "next/image";
 
 const plans = [
   {
-    image: "/Overlay%20(2).png",
-    title: "Income Protection",
-    description:
-      "Ensure your family's lifestyle remains unchanged. Tax-free benefit payments when it matters most.",
-    features: ["Disability Riders", "Accelerated Death Benefits"],
-    configHref: "/config/income",
+    image: "/Overlay (2).png",
+    title: "Indexed Universal Life (IUL)",
+    description: "Protection of your health & wealth",
+    features: ["Cash Value Accumulation", "Death Benefit Protection"],
+    configHref: "/indexed-universal-life",
   },
   {
     image: "/Overlay.png",
-    title: "Debt-Shielding Fortress",
-    description:
-      "Clear mortgages and loans instantly. Your loved ones inherit valuable assets, not crushing liabilities.",
-    features: ["Mortgage Payoff", "Student Loan Clearing"],
-    configHref: "/config/debt",
+    title: "Equity Indexed Annuity(EIA)",
+    description: "Protection for lifetime income",
+    features: ["Guaranteed Lifetime Income", "Upfront Bonus Up to 26%"],
+    configHref: "/equity-indexed-annuity",
   },
   {
-    image: "/Overlay%20(1).png",
-    title: "Generational Wealth",
-    description:
-      "Cash value components to build a foundation for education, business starts, and retirement.",
-    features: ["Cash Value Accumulation", "Retirement Supplements"],
-    configHref: "/config/wealth",
+    image: "/Overlay (1).png",
+    title: "Long-Term Care(LTC)",
+    description: "Protections for good health, weak or ageing care",
+    features: ["Nursing Home Care Coverage", "Home Health Care Support"],
+    configHref: "/long-term-care",
+  },
+  {
+    image: "/Encrypted.png",
+    title: "Term Life Insurance with Living Benefits(TLB)",
+    description: "Protection for good health, deadly illnesses & disease care",
+    features: ["Critical & Chronic Illness Rider", "Flexible Benefit Access"],
+    configHref: "/term-life-benefits",
   },
 ];
 
@@ -40,7 +44,7 @@ export default function ProtectionPlanSection() {
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.heading}>
-            What Your Hero Protection Plan Includes
+            Our Protection Plans Include
           </h2>
           <div className={styles.viewToggle} aria-label="View options">
             <button
@@ -87,7 +91,7 @@ export default function ProtectionPlanSection() {
               </ul>
 
               <Link href={plan.configHref} className={styles.configLink}>
-                Config Module →
+                Read more →
               </Link>
             </li>
           ))}
