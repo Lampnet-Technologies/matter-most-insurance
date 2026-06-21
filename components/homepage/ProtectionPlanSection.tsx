@@ -7,29 +7,29 @@ import Image from "next/image";
 
 const plans = [
   {
-    image: "/Overlay (2).png",
+    image: "/Encrypted.png",
     title: "Indexed Universal Life (IUL)",
     description: "Protection of your health & wealth",
     features: ["Cash Value Accumulation", "Death Benefit Protection"],
     configHref: "/indexed-universal-life",
   },
   {
-    image: "/Overlay.png",
-    title: "Equity Indexed Annuity(EIA)",
+    image: "/Encrypted.png",
+    title: "Equity Indexed Annuity (EIA)",
     description: "Protection for lifetime income",
     features: ["Guaranteed Lifetime Income", "Upfront Bonus Up to 26%"],
     configHref: "/equity-indexed-annuity",
   },
   {
-    image: "/Overlay (1).png",
-    title: "Long-Term Care(LTC)",
+    image: "/Encrypted.png",
+    title: "Long-Term Care (LTC)",
     description: "Protections for good health, weak or ageing care",
     features: ["Nursing Home Care Coverage", "Home Health Care Support"],
     configHref: "/long-term-care",
   },
   {
     image: "/Encrypted.png",
-    title: "Term Life Insurance with Living Benefits(TLB)",
+    title: "Term Life Insurance with Living Benefits (TLB)",
     description: "Protection for good health, deadly illnesses & disease care",
     features: ["Critical & Chronic Illness Rider", "Flexible Benefit Access"],
     configHref: "/term-life-benefits",

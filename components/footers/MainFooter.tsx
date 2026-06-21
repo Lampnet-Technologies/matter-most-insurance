@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Globe, Share2, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import styles from "./MainFooter.module.css";
 
 const solutionLinks = [
@@ -52,22 +52,52 @@ export default function MainFooter() {
             </p>
             <div className={styles.socialRow} aria-label="Social links">
               <Link
-                href="https://example.com"
+                href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Website"
+                aria-label="LinkedIn"
                 className={styles.socialBtn}
               >
-                <Globe className={styles.socialIcon} aria-hidden="true" />
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ width: 14, height: 14 }}>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
               </Link>
               <Link
-                href="https://example.com/share"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Share"
+                aria-label="X (formerly Twitter)"
                 className={styles.socialBtn}
               >
-                <Share2 className={styles.socialIcon} aria-hidden="true" />
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style={{ width: 14, height: 14 }}>
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className={styles.socialBtn}
+              >
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ width: 14, height: 14 }}>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </Link>
+              <Link
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className={styles.socialBtn}
+              >
+                <svg className={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ width: 14, height: 14 }}>
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
               </Link>
             </div>
           </div>

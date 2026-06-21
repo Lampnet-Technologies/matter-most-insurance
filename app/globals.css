@@ -10,6 +10,7 @@
 
   /* Shared layout scale */
   --layout-max: 1280px;
+  --container: 1280px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -77,6 +78,8 @@ html,
 body {
   min-height: 100%;
   background-color: #f7fafc;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -84,6 +87,10 @@ body {
   background-color: #f7fafc;
   color: var(--on-surface);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h1,

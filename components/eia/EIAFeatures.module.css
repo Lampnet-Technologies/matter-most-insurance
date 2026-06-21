@@ -3,7 +3,7 @@
 .section { background: var(--eia-surface-low); padding: 96px 32px; }
 .container { max-width: 1200px; margin: 0 auto; }
 
-.header { margin-bottom: 56px; display: flex; flex-direction: column; gap: 14px; }
+.header { margin-bottom: 56px; display: flex; flex-direction: column; gap: 8px; }
 
 .heading {
   font-family: var(--eia-font-headline);

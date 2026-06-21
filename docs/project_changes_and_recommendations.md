@@ -32,6 +32,22 @@ This document outlines the recent refactoring, cleanups, and layout alignments p
   - **Paddings & Grid Adjustments**: Reduced layout padding (down to `20px` / `16px`) and adjusted column min-widths for Articles, Blog Details, and Support pages on viewports below `768px`/`480px` to eliminate any possible horizontal scroll.
   - **Providers Link Routing**: Mapped CA and US tab filter requests cleanly under the Providers page.
 
+### UI Designer Adjustments & Round 2 Responsiveness
+- **Global Layout & Overflow Fixes**:
+  - Enforced `overflow-x: hidden; max-width: 100%;` on `html` and `body` in `app/globals.css`, adding text word-breaking rules.
+  - Set container max-width variable `--container: 1280px` to cap layout widths correctly.
+  - Increased navbar mobile collapse breakpoint from `1180px` to `1280px` in `MainNav.module.css` to prevent menu overflows on medium screens.
+- **Homepage Plan Icons**:
+  - Standardized all 4 protection plan cards in `ProtectionPlanSection.tsx` to use `/Encrypted.png` as requested.
+- **EIA Header Underline Gap**:
+  - Moved the underline stroke closer to the "Precision Features" header in `EIAFeatures.module.css` by reducing vertical spacing.
+- **Lucrativeness Accordions**:
+  - Set `align-items: start;` in `lucrativeness.module.css` to prevent sibling cards in the same grid row from stretching when an accordion expands.
+- **Letter Spacing**:
+  - Removed letter spacing (`letter-spacing: 0`) in the homepage sections "More Than Protection..." and "Protection Is Not Just...".
+- **Footer Social Icons**:
+  - Replaced icon components in `MainFooter.tsx` with custom inline SVGs (LinkedIn, X official logo, Instagram, and Facebook) using a stroke-width of 2.5 for bold, consistent rendering.
+
 ---
 
 ## 2. Future Recommendations & Considerations
