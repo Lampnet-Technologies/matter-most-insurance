@@ -93,11 +93,11 @@
   }
   .ctas {
     flex-direction: column;
-    width: 100%;
+    width: 80%;
   }
   .btnPrimary,
   .btnOutline {
-    width: 100%;
+    width: 80%;
     justify-content: center;
   }
 }

@@ -294,6 +294,7 @@ export default function BenefitsPageClient({ initialTab }: { initialTab: TabKey 
                 fill
                 sizes="(max-width: 900px) 100vw, 550px"
                 className={styles.mainImage}
+                loading="eager"
               />
             </div>
             <div className={styles.cardsGrid4}>
@@ -323,6 +324,7 @@ export default function BenefitsPageClient({ initialTab }: { initialTab: TabKey 
                 fill
                 sizes="(max-width: 900px) 100vw, 550px"
                 className={styles.mainImage}
+                loading="eager"
               />
             </div>
           </div>

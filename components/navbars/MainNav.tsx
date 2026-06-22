@@ -19,7 +19,6 @@ const navLinks = [
 const companyOptions = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Partners", href: "/providers" },
   { label: "Join The Team", href: "/join-us" },
   { label: "Contact", href: "/contact" },
 ];
@@ -125,7 +124,7 @@ export default function MainNav() {
           {navLinks.map((link) => {
             const dropdownOpen = activeDropdown === link.label;
             const options = dropdownOptionsMap[link.label] || [];
-            
+
             // Check if any of the dropdown items is active
             const isPathActive = options.some((option) => pathname === option.href);
 

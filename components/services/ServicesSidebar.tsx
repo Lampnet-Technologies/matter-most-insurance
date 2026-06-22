@@ -61,59 +61,9 @@ export default function ServicesSidebar() {
           </div>
         </div>
 
-        {/* 
-          ======================================================================
-          ADVERTISEMENT BANNERS
-          The client may or may not want these ad units. 
-          To hide them, you can simply select and comment out the blocks below.
-          ======================================================================
-        */}
+        {/* Ads Section here if needed */}
 
-        {/* BEGIN: Optional Ad Banner 1 (Medium Rectangle 300x250) */}
-        {showAd1 && (
-          <div className={styles.adCard}>
-            <button
-              type="button"
-              className={styles.closeBtn}
-              onClick={() => setShowAd1(false)}
-              aria-label="Close ad"
-            >
-              <X size={14} />
-            </button>
-            <Image
-              src="/ads1.png"
-              alt="Advertisement 1"
-              width={300}
-              height={250}
-              className={styles.adImage}
-            />
-            <div className={styles.adTag}>Advertisement</div>
-          </div>
-        )}
-        {/* END: Optional Ad Banner 1 */}
-
-        {/* BEGIN: Optional Ad Banner 2 (Medium Rectangle 300x250) */}
-        {showAd2 && (
-          <div className={styles.adCard}>
-            <button
-              type="button"
-              className={styles.closeBtn}
-              onClick={() => setShowAd2(false)}
-              aria-label="Close ad"
-            >
-              <X size={14} />
-            </button>
-            <Image
-              src="/ads2.png"
-              alt="Advertisement 2"
-              width={300}
-              height={250}
-              className={styles.adImage}
-            />
-            <div className={styles.adTag}>Advertisement</div>
-          </div>
-        )}
-        {/* END: Optional Ad Banner 2 */}
+        {/* End Ads Section */}
       </div>
     </div>
   );

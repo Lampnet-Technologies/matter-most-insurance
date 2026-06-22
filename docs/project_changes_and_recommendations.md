@@ -47,6 +47,10 @@ This document outlines the recent refactoring, cleanups, and layout alignments p
   - Removed letter spacing (`letter-spacing: 0`) in the homepage sections "More Than Protection..." and "Protection Is Not Just...".
 - **Footer Social Icons**:
   - Replaced icon components in `MainFooter.tsx` with custom inline SVGs (LinkedIn, X official logo, Instagram, and Facebook) using a stroke-width of 2.5 for bold, consistent rendering.
+- **Providers Page Mobile Layout**:
+  - Resolved mobile horizontal overflow in the Providers page by reducing card padding (down to `10px` on mobile), setting `.imageWrapper` height to `50px` to scale down Next.js logo images cleanly, and switching to a compact 2-column logo grid on small screens (< 480px) to prevent layout breakages.
+- **Dropdown Menu Hover Box Widths**:
+  - Adjusted dropdown items in `MainNav.module.css` to use a `margin: 0 8px` and `border-radius: var(--radius-sm)` so they display with clean inset boundaries. Added `overflow: hidden` on `.dropdownMenu` to clip bleed-through, and removed the layout-shifting `padding-left: 2px` rule on hover to secure alignment.
 
 ---
 

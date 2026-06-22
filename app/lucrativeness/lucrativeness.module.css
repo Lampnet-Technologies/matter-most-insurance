@@ -502,8 +502,8 @@
 
   .introLeft,
   .introRight {
-    width: 100% !important;
-    padding: 32px !important;
+    width: 95% !important;
+    padding: 30px !important;
   }
 
   .introRight {
@@ -521,7 +521,7 @@
 @media (max-width: 768px) {
   .introLeft,
   .introRight {
-    padding: 20px !important;
+    padding: 10px !important;
   }
 
   .introRight {
@@ -546,7 +546,7 @@
 @media (max-width: 480px) {
   .introLeft,
   .introRight {
-    padding: 16px !important;
+    padding: 14px !important;
   }
 
   .introLeftTitle {

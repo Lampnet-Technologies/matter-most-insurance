@@ -41,9 +41,11 @@
   border-radius: var(--radius-md);
   box-shadow: #cacfd4 0px 1px 1px;
   padding: 24px 22px 22px;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
+  -webkit-transition: box-shadow 0.2s,    transform 0.2s;
+  -moz-transition: box-shadow 0.2s,    transform 0.2s;
+  -ms-transition: box-shadow 0.2s,    transform 0.2s;
+  -o-transition: box-shadow 0.2s,    transform 0.2s;
+  transition:    box-shadow 0.2s,    transform 0.2s;
 }
 .card:hover {
   box-shadow: var(--shadow-md);
@@ -97,7 +99,6 @@
 /* ── Providers Block ─────────────────────── */
 .providersBlock {
   margin-top: 48px;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,13 +113,16 @@
   color: #44474C;
   text-align: center;
   line-height: 1.5;
+  max-width: var(--container);
+  width: 100%;
 }
 
 .providersGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  width: 100%;
+  width: 90%;
+  max-width: var(--container);
 }
 
 .providerCard {

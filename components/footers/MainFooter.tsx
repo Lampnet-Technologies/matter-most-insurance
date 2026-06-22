@@ -180,7 +180,7 @@ export default function MainFooter() {
         {/* ── Bottom bar ──────────────────────────── */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            © 2024 Matter Most Insurance. Protocol V.1. Protecting What Matters
+            © 2024 Matter Most Insurance. Protocol V.1.2. Protecting What Matters
             Most.
           </p>
         </div>

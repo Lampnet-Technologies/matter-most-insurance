@@ -160,7 +160,7 @@
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 900px) {
   .section {
-    padding: 64px 20px;
+    padding: 48px 20px;
   }
   .grid {
     grid-template-columns: 1fr;
@@ -182,5 +182,68 @@
   }
   .mosaicColB {
     padding-top: 32px;
+  }
+
+  .mosaicCard {
+    padding: 20px;
+    min-height: 140px;
+  }
+
+  .heading {
+    font-size: clamp(24px, 5vw, 40px);
+  }
+
+  .bodyText {
+    font-size: 14px;
+    gap: 12px;
+  }
+}
+
+/* ── Extra small screens ────────────────────────── */
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .grid {
+    gap: 32px;
+  }
+
+  .mosaicCol {
+    gap: 10px;
+  }
+
+  .mosaicPhotoA,
+  .mosaicPhotoB {
+    height: 160px;
+  }
+
+  .mosaicCard {
+    padding: 16px;
+    min-height: 120px;
+  }
+
+  .mosaicCardText {
+    font-size: 20px;
+  }
+
+  .heading {
+    font-size: clamp(20px, 6vw, 32px);
+  }
+
+  .contentCol {
+    gap: 20px;
+  }
+
+  .checklist {
+    gap: 16px;
+  }
+
+  .checkItem {
+    gap: 12px;
+  }
+
+  .checkIcon {
+    margin-top: 0px;
   }
 }

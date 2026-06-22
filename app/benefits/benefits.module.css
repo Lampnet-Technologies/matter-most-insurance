@@ -89,6 +89,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* ── Tabs (Card bar) ─────────────────────── */
@@ -258,13 +259,16 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 40px 20px;
+    padding: 40px 16px;
   }
   .hero {
     height: 340px;
   }
   .heroContent {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+  .heroTitle {
+    font-size: 32px;
   }
   .tabs {
     display: flex;
@@ -281,5 +285,56 @@
   }
   .cardsGrid4 {
     grid-template-columns: 1fr;
+  }
+  .benefitCard,
+  .bottomCard {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 32px 12px;
+  }
+  .hero {
+    height: 280px;
+  }
+  .heroContent {
+    padding: 0 12px;
+  }
+  .heroTitle {
+    font-size: 24px;
+  }
+  .heroSub {
+    font-size: 14px;
+  }
+  .heroPre {
+    font-size: 9px;
+  }
+  .tabs {
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
+  .tabBtn {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  .sectionGrid {
+    gap: 20px;
+  }
+  .mainImageWrapper {
+    min-height: 250px;
+  }
+  .benefitCard,
+  .bottomCard {
+    padding: 12px;
+  }
+  .cardTitle,
+  .bottomCardTitle {
+    font-size: 13px;
+  }
+  .cardDesc,
+  .bottomCardDesc {
+    font-size: 11px;
   }
 }
